@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Hizmetler" activePage="hizmetler">
+  <div class="page-hero"><h1>Hizmetlerimiz</h1><p>Fason dilimleme, perfore, korona ve tabakalama hizmetleri</p></div>
+  <section class="section">
+    <div class="section-inner">
+      <p class="intro">Malzemeleriniz en iyi stoklama şartlarında korunur. Fason için gönderilen malzemeleriniz en az fireyle en doğru işle sonuçlandırılır.<br><br>Fason Bobin Dilme &nbsp;&middot;&nbsp; Fason Perfore &nbsp;&middot;&nbsp; Fason Korona Güçlendirme &nbsp;&middot;&nbsp; Fason Tabakalama</p>
+      <div class="hizmet-grid">
+        <div class="hizmet-card">
+          <h3>Dilme</h3>
+          <p>Firmamız modern dilimleme makinelerinde Fason dilimleme hizmeti vermektedir.</p>
+          <ul class="two-col">
+            <li>OPP</li><li>CPP</li><li>Metalize</li><li>Bariyer film</li><li>PET</li><li>PVC</li><li>Kağıt</li><li>Sentetik Kağıt</li><li>PE + Alüminyum</li><li>PE (Polietilen)</li><li>Steril kağıt</li><li>Ağda bandı</li><li>Sedye örtüsü</li>
+          </ul>
+        </div>
+        <div class="hizmet-card">
+          <h3>Perfore</h3>
+          <p>İstediğiniz ölçüde, makro ve ya mikro perforeli işleriniz itina ile yapılır.</p>
+          <ul>
+            <li>CPP perforasyonu</li><li>OPP perforasyonu</li><li>PE perforesi</li>
+          </ul>
+        </div>
+        <div class="hizmet-card">
+          <h3>Korona Atma</h3>
+          <p>Sıfır dyn korona seviyesi olan malzemelere dahi 40 dyn yakın korona atılabilir.</p>
+          <ul class="two-col">
+            <li>OPP</li><li>CPP</li><li>METALİZE</li><li>HOLOGRAM</li><li>PET</li><li>PVC</li><li>BARİYER FİLM</li><li>ETİKETLİK</li><li>PE</li><li>PS</li><li>ÇUVAL</li><li>KARGO POŞETİ</li>
+          </ul>
+        </div>
+        <div class="hizmet-card">
+          <h3>Tabakalama</h3>
+          <p>İstediğiniz ölçüde, fason tabaka – çıkrık işleriniz itina ile yapılır.</p>
+          <ul>
+            <li>Firmamızda tabakalı ürün satışı yapılmaktadır.</li>
+            <li>Fason çıkrıkta malzeme tabakalanır.</li>
+            <li>İstenirse çıkrıktan sonra giyotine alınıp kesilir.</li>
+            <li>Giyotinde kesilen ürünlerin kenarı daha düzgün ve pürüzsüz olur.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .intro { color: var(--text-light); font-size: 15px; line-height: 1.8; margin-bottom: 32px; }
+  .hizmet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .hizmet-card { background: var(--gray-bg); border-radius: 12px; padding: 32px; border-top: 4px solid var(--blue); }
+  .hizmet-card h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 800; color: var(--blue-dark); margin-bottom: 16px; }
+  .hizmet-card p { font-size: 14px; line-height: 1.8; color: var(--text-light); margin-bottom: 16px; }
+  .hizmet-card ul { list-style: none; font-size: 13.5px; color: var(--text-light); line-height: 2.2; }
+  .hizmet-card ul li::before { content: '• '; color: var(--blue); font-weight: bold; }
+  .hizmet-card ul.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; font-size: 13px; line-height: 2; }
+
+  @media (max-width: 640px) {
+    .hizmet-grid { grid-template-columns: 1fr; }
+  }
+</style>

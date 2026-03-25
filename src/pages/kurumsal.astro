@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Kurumsal" activePage="kurumsal">
+  <div class="page-hero"><h1>Kurumsal / Firma Tanıtımı</h1><p>Yenipak Ambalaj hakkında detaylı bilgi</p></div>
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Hakkımızda</h2>
+      <div class="prose">
+        <p>Yenipak Ambalaj Tic. ve San. Ltd. Şti. <strong>8 Eylül 1997 tarihinde</strong>, Polinas A.Ş.'nin ana bayii olarak kurulmuştur. Başta gıda ambalajı olmak üzere çeşitli filmlerin alım satım işlemlerini ve istenen ölçülerde kesimlerini yapmaktadır.</p>
+        <p>Kurulduğu günlerde üç kişilik kadrosu ile Beylikdüzü'nde faaliyete başlayan Yenipak Ambalaj, personel sayısını 10'a, makine sayısını 5'e çıkararak büyümüştür.</p>
+        <p>2000 yılından sonra Avcılar'daki tesislerinde personel sayısını 30'a, makine sayısını 10'a yükseltmiştir.</p>
+        <p>2004 yılından itibaren <strong>Hadımköy'deki 8000 m² kapalı tesisine</strong> taşınmış, personel sayısını 49'a, makine sayısını 20'ye yükseltmiştir.</p>
+        <p>ISO 9001:2008 Kalite Yönetim Sistemi ve OHSAS 18001:2007 İş Sağlığı ve Güvenliği Yönetim Sistemi kurularak uluslararası kalite standartlarına uyum sağlanmıştır.</p>
+        <p><strong>24 Kasım 2025 tarihinde</strong> tür değişikliği ile şirket <strong>Yenipak Ambalaj Ticaret ve Sanayi Anonim Şirketi</strong> adıyla faaliyetlerini sürdürmektedir.</p>
+      </div>
+      <div class="highlight-box">
+        <h3>Bu bağlamda YENİPAK;</h3>
+        <ul>
+          <li><strong>DIŞ MÜŞTERİ MEMNUNİYETİ:</strong> Sunduğu hizmet ve müşteri taleplerine anında cevap verebilme yeteneğiyle;</li>
+          <li><strong>İÇ MÜŞTERİ MEMNUNİYETİ:</strong> Tüm çalışanları için eğitimi birincil gereklilik olarak ele alarak "Kaliteyi Oluşturan İnsandır" anlayışını benimseterek;</li>
+          <li><strong>TEDARİKÇİSİYLE İŞBİRLİĞİ:</strong> Tedarikçisi ile işbirliğine giderek ve sürekli gelişimi ilke edinerek;</li>
+          <li class="conclusion">SONUCA GÖTÜREN ÇÖZÜMLER ÜRETİR.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .prose { font-size: 15px; line-height: 1.9; color: var(--text-light); max-width: 820px; }
+  .prose p { margin-bottom: 18px; }
+  .prose strong { color: var(--blue-dark); font-weight: 700; }
+  .highlight-box { background: var(--blue); color: var(--white); border-radius: 10px; padding: 36px 40px; margin-top: 40px; }
+  .highlight-box h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+  .highlight-box ul { list-style: none; }
+  .highlight-box ul li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.15); font-size: 14.5px; line-height: 1.7; }
+  .highlight-box ul li:last-child { border-bottom: none; }
+  .highlight-box ul li strong { color: white; }
+  .highlight-box ul li.conclusion { font-weight: 700; font-size: 16px; color: white; padding-top: 14px; border-bottom: none; }
+</style>

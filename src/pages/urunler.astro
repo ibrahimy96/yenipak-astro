@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const heroImages = [
+  'c837a6_e55e0461bef24a7d9663f1b8ba547959~mv2.jpg',
+  'c837a6_b3d24609767048afb0b8fa5ae2c89fa4~mv2.jpg',
+  'c837a6_a17f3647b57d4ab5975796b2abd4e6c4~mv2.jpg',
+  'c837a6_5c1bab9f5c0d42cbb4bee4e1dc4613b1~mv2.jpg',
+];
+
+const products = [
+  { img: 'ac31a9_ddf1c619e46f4ed08d700cc233fa1faa~mv2.png', name: 'POLICAST', sub: 'CPP Filmler' },
+  { img: 'ac31a9_b80b19d2497240b9ab92f46b96af4b5d~mv2.png', name: 'POLIMET', sub: 'Metalize Filmler' },
+  { img: 'ac31a9_0450da851dd54556bbe217d30ea1cee0~mv2.png', name: 'POLIKAP', sub: 'Kaplı Filmler' },
+  { img: 'ac31a9_6984da691e4d4d0b9aa343a907ac75be~mv2.png', name: 'POLIBARR', sub: 'Bariyer Filmler' },
+  { img: 'ac31a9_7bb85ac51d02453282c96c9a9f53f8ae~mv2.png', name: 'POLIMAGIC', sub: 'Holografik Filmler' },
+  { img: 'ac31a9_c47ead84743942409d65e739237b2db1~mv2.png', name: 'POLISTRIP', sub: 'Açma Şeritleri' },
+  { img: 'ac31a9_c4e1e7478fbb47bca04f30e2356e6b3d~mv2.png', name: 'POLINEX', sub: 'Koekstrude Filmler' },
+  { img: 'ac31a9_63eb2911d48b4a48b6d3dfd109e72f43~mv2.png', name: 'PILEN', sub: 'Yalın Filmler' },
+  { img: 'ac31a9_9906ed2101d0492d8a459ac8d4339b93~mv2.png', name: 'POLIPER', sub: 'Pearlize Filmler' },
+  { img: 'ac31a9_01a0bd9d28f4425d9b6f72bd6c28e063~mv2.png', name: 'POLILABEL', sub: 'Etiket Filmleri' },
+  { img: 'ac31a9_e986b93d56024cf08f8c57605f5e2532~mv2.png', name: 'ÜST FİLMLER', sub: 'Sabit ve Kolay Açılabilen' },
+  { img: 'ac31a9_b746a4ca67e0459ca19752acc1bf31a7~mv2.png', name: 'POLIPET', sub: 'Polyester Film' },
+  { img: 'ac31a9_01f38c7fdd444b4c86bd52fe587b704c~mv2.png', name: 'SHRINK FILMLER', sub: 'PVC - PET Shrink' },
+];
+---
+
+<Layout title="Ürünler" activePage="urunler">
+  <div class="page-hero"><h1>Ürün Grupları</h1><p>Polinas A.Ş. ana bayii olarak geniş ürün yelpazemiz</p></div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="product-hero-images">
+        {heroImages.map(img => (
+          <img src={`https://static.wixstatic.com/media/${img}/v1/fill/w_227,h_226,q_75,enc_avif,quality_auto/${img}`} alt="">
+        ))}
+        <img src="https://static.wixstatic.com/media/ac31a9_41f4fae0ec6947bab09a2ba404059744~mv2.png/v1/fill/w_227,h_158,q_75,enc_avif,quality_auto/ac31a9_41f4fae0ec6947bab09a2ba404059744~mv2.png" alt="">
+      </div>
+      <h2 class="section-title">Ürün Grupları</h2>
+      <div class="products-grid">
+        {products.map(p => (
+          <div class="product-card">
+            <img src={`https://static.wixstatic.com/media/${p.img}/v1/fit/w_179,h_101,q_75,enc_avif,quality_auto/${p.img}`} alt={p.name}>
+            <div class="product-card-label">{p.name}<br><span class="product-sub">{p.sub}</span></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .product-hero-images { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 48px; }
+  .product-hero-images img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px; }
+  .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .product-card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 3px 14px rgba(0,0,0,0.07); transition: transform .2s, box-shadow .2s; text-align: center; }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(26,95,168,0.13); }
+  .product-card img { width: 100%; height: 110px; object-fit: contain; padding: 16px; background: var(--gray-bg); }
+  .product-card-label { padding: 14px 12px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; color: var(--blue-dark); line-height: 1.4; }
+  .product-sub { color: var(--text-light); font-weight: 400; }
+
+  @media (max-width: 1000px) {
+    .products-grid { grid-template-columns: 1fr 1fr; }
+    .product-hero-images { grid-template-columns: repeat(3,1fr); }
+  }
+  @media (max-width: 640px) {
+    .products-grid { grid-template-columns: 1fr; }
+    .product-hero-images { grid-template-columns: 1fr 1fr; }
+  }
+</style>
