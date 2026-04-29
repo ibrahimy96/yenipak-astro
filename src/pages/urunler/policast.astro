@@ -1,0 +1,218 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+export const prerender = true;
+
+const variants = [
+  {
+    code: 'C11',
+    image: 'c11.png',
+    description: 'Gıda ambalajları için iki tarafı ısıl yapışmalı, şeffaf, gerdirilmemiş polipropilen film.',
+    features: [
+      'Tek tarafı koronalı',
+      'Tok yapıda mükemmel parlaklık, şeffaflık ve düşük pusluluk',
+      'Mükemmel laminasyon tutkalı adezyonu',
+      'Mükemmel hot tack ve ısıl yapışma kuvveti',
+      'Tek kat veya laminasyon halinde kullanıma uygun',
+      'Mükemmel makine performansı',
+      'Unlu mamuller, bakliyat ve makarna ambalajları için ideal'
+    ],
+    thickness: '20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 100'
+  },
+  {
+    code: 'C12F',
+    image: 'c12f.png',
+    description: 'İki tarafı ısıl yapışmalı, taze sebze ve salata paketleri için şeffaf cast antifog film.',
+    features: [
+      'İki tarafıda koronalı',
+      'Tok yapıda mükemmel parlaklık',
+      'Mükemmel hot tack ve ısıl yapışma kuvveti',
+      'Mükemmel makine performansı',
+      'Paket içerisindeki nem filmin yüzeyinde yayılarak büyük damlalar oluşmasını engeller ve paketin içinin görülmesini sağlar'
+    ],
+    thickness: '40, 50, 65'
+  },
+  {
+    code: 'C11B',
+    image: 'c11b.png',
+    description: 'Gıda ambalajları için iki tarafı ısıl yapışmalı, beyaz, CPP (gerdirilmemiş polipropilen) film.',
+    features: [
+      'Tek tarafı koronalı',
+      'Tok yapıda mükemmel parlaklık',
+      'Mükemmel laminasyon tutkalı adezyonu',
+      'Mükemmel hot tack ve ısıl yapışma kuvveti',
+      'Tek kat veya laminasyon halinde kullanıma uygun',
+      'Mükemmel makine performansı',
+      'Unlu mamuller, bakliyat ve makarna ambalajları için ideal'
+    ],
+    thickness: '20-100 µm arası'
+  }
+];
+---
+
+<Layout title="POLICAST - CPP Filmler" activePage="urunler">
+  <div class="page-hero">
+    <Image src="/images/products/policast.webp" alt="POLICAST" class="hero-image" width={280} height={280} />
+    <div class="hero-content">
+      <h1>POLICAST</h1>
+      <p>CPP Filmler</p>
+    </div>
+  </div>
+  
+  <section class="section">
+    <div class="section-inner">
+      <div class="product-intro">
+        <Image src="/images/products/policast-header-1.webp" alt="POLICAST" class="hero-image" width={280} height={280} />
+        <Image src="/images/products/policast-header-2.webp" alt="POLICAST" class="hero-image-secondary" width={262} height={262} />
+        <p>Gıda ambalajları ve genel kullanım amaçlı ısıl yapışmalı şeffaf, beyaz, ve antifog özellikli cast filmler. Kağıt benzeri baskıya uygun baskı yüzeyi mat veya parlak cast filmler.</p>
+      </div>
+
+      <div class="variants-list">
+        {variants.map(variant => (
+          <div class="variant-card">
+            <div class="variant-header">
+              <h2>{variant.code}</h2>
+              {variant.image && <Image src={`/images/products/${variant.image.replace('.png', '.webp')}`} alt={variant.code} class="variant-image" width={150} height={150} />}
+            </div>
+            <p class="variant-description">{variant.description}</p>
+            <h3>Özellikleri ve Kullanım alanları:</h3>
+            <ul>
+              {variant.features.map(feature => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+            <p class="thickness"><strong>Üretilen Kalınlıklar (mikron):</strong> {variant.thickness}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0e4a8a 0%, #1a5fa8 50%, #2a7fd4 100%);
+    padding: 60px 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://static.wixstatic.com/media/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg/v1/fill/w_980,h_425,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg') center/cover no-repeat;
+    opacity: 0.15;
+  }
+  .hero-image {
+    position: relative;
+    width: 280px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-image-secondary {
+    position: relative;
+    width: 262px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-content {
+    position: relative;
+    text-align: left;
+  }
+  .hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero-content p {
+    color: rgba(255,255,255,0.9);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .product-intro {
+    background: var(--gray-bg);
+    padding: 32px;
+    border-radius: 10px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .product-intro p {
+    font-size: 16px;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .variants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .variant-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+  }
+  .variant-card h2 {
+    color: var(--blue-dark);
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .variant-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+  .variant-image {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+  .variant-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+  .variant-card h3 {
+    color: var(--blue-dark);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .variant-card ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+  .variant-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .thickness {
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    .page-hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-content {
+      text-align: center;
+    }
+    .hero-image {
+      width: 150px;
+    }
+    .hero-content h1 {
+      font-size: 32px;
+    }
+  }
+</style>

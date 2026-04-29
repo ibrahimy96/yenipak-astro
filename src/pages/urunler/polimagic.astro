@@ -1,0 +1,159 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+export const prerender = true;
+---
+
+<Layout title="POLIMAGIC - Holografik Filmler" activePage="urunler">
+  <div class="page-hero">
+    <Image src="/images/products/polimagic.webp" alt="POLIMAGIC" class="hero-image" width={200} height={200} />
+    <div class="hero-content">
+      <h1>POLIMAGIC</h1>
+      <p>Holografik Filmler</p>
+    </div>
+  </div>
+  
+  <section class="section">
+    <div class="section-inner">
+      <div class="product-intro">
+        <p>POLIMAGIC Holografik filmler, etkileyici dizaynları ile ürünlerinize benzersiz görsel özellikler kazandırır, ürünlerinizin raflardaki albenisini arttırır. POLIMAGIC Holografik Filmler, tüm ambalaj sektörünün ihtiyacına uygun, çeşitli paketleme sistemlerinde ve paket yapılarında sorunsuz çalışacak özelliklerde üretilmektedir.</p>
+        <p>Mükemmel mürekkep adezyonu, bariyer özellikleri ve geniş yelpazedeki holografik dizaynları sayesinde ürününüze özgü bir ambalaj ve ayrıcalık kazandırır.</p>
+      </div>
+
+      <div class="variants-list">
+        <div class="variant-card">
+          <h2>Film Özellikleri</h2>
+          <h3>Genel Özellikler:</h3>
+          <ul>
+            <li>Mükemmel kalite ve yüksek parlaklık</li>
+            <li>Ambalajlarınıza yüksek albeni ve estetik görünüş katar</li>
+            <li>Benzersiz, üstün tasarım olanakları sunar</li>
+            <li>Ürünlerinizin taklit edilmesini önlemede etkin bir çözümdür</li>
+            <li>Mükemmel baskı performansı</li>
+            <li>Farklı enlerde üretilebilme (1650 mm'ye kadar)</li>
+            <li>Talep üzerine özel logo ve tasarımlarda hazırlanabilme</li>
+          </ul>
+          
+          <h3>Uygulamalar:</h3>
+          <ul>
+            <li>Gıda ambalajları</li>
+            <li>Kağıt-karton ve film laminasyonları</li>
+            <li>Kendinden yapışkanlı etiketler</li>
+            <li>Bobin beslemeli şişe etiketleri</li>
+            <li>Kes-demetle tipi etiketler</li>
+            <li>Hediye paketlemesi ve dekoratif ambalajlama</li>
+            <li>Güvenlik etiketleri</li>
+          </ul>
+        </div>
+
+        <div class="variant-card">
+          <h2>Hologram Desenleri</h2>
+          <p>Çeşitli hologram desenleri mevcuttur. İhtiyacınıza uygun desen seçimi için bizimle iletişime geçebilirsiniz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0e4a8a 0%, #1a5fa8 50%, #2a7fd4 100%);
+    padding: 60px 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://static.wixstatic.com/media/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg/v1/fill/w_980,h_425,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg') center/cover no-repeat;
+    opacity: 0.15;
+  }
+  .hero-image {
+    position: relative;
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-content {
+    position: relative;
+    text-align: left;
+  }
+  .hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero-content p {
+    color: rgba(255,255,255,0.9);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .product-intro {
+    background: var(--gray-bg);
+    padding: 32px;
+    border-radius: 10px;
+    margin-bottom: 48px;
+  }
+  .product-intro p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .variants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .variant-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+  }
+  .variant-card h2 {
+    color: var(--blue-dark);
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .variant-card h3 {
+    color: var(--blue-dark);
+    font-size: 18px;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+  .variant-card ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+  .variant-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .variant-card p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  @media (max-width: 768px) {
+    .page-hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-content {
+      text-align: center;
+    }
+    .hero-image {
+      width: 150px;
+    }
+    .hero-content h1 {
+      font-size: 32px;
+    }
+  }
+</style>

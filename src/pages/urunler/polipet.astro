@@ -1,0 +1,296 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+export const prerender = true;
+
+const variants = [
+  {
+    code: 'P',
+    image: 'p.png',
+    description: 'P çift yönde gerdirilmiş plain polyester (BOPET) filmidr.',
+    features: [
+      'Koronasız plain filmdir',
+      'Mükemmel makine performansı',
+      'Mükemmel parlaklık ve şeffaflık',
+      'Mükemmel boyutsal kararlılık'
+    ],
+    thickness: '12, 23, 36, 50',
+    note: 'P, kapalı bir depoda ve ısıktan uzak bir sekilde depolanmalıdır. Sevk tarihinden itibaren 6 ayı askın süreyle bekleyen ürünlerde sorumluluk kabul etmemektedir.'
+  },
+  {
+    code: 'PXE',
+    image: 'pxe.png',
+    description: 'PXE, mürekkep ve tutkal adezyonu geliştirmek için dış tarafı koronalı, çift yönde gerdirilmiş polyester(BOPET) ambalaj filmidir.',
+    features: [
+      'Tek tarafı koronalı',
+      'Mükemmel makine performansı',
+      'Mükemmel parlaklık ve şeffaflık',
+      'Mükemmel sertlik',
+      'Mükemmel boyutsal kararlılık',
+      'Genel esnek ambalaj uygulamalarına yönelik baskı, kaplama ve laminasyon proseseslerinde kullanıma uygundur'
+    ],
+    thickness: '12, 23, 36, 50',
+    note: 'PXE, kapalı bir depoda ve ısıktan uzak bir sekilde depolanmalıdır. Sevk tarihinden itibaren 6 ayı askın süreyle bekleyen ürünlerde sorumluluk kabul etmemektedir.'
+  },
+  {
+    code: 'PKR',
+    image: 'pkr.png',
+    description: 'PKR, tek tarafı kimyasal koronalı çift yönde gerdirilmiş polyester(BOPET) ambalaj filmidir.',
+    features: [
+      'Tek tarafı kimyasal koronalı',
+      'Mükemmel makine performansı',
+      'Mükemmel parlaklık ve şeffaflık',
+      'Mükemmel tokluk',
+      'Mükemmel boyutsal kararlılık',
+      'Farklı mürekkep ve kaplama malzemelerinde üstün adezyon performansı',
+      'PKR retort uygulamalarda kullanılabilir (lab test 120˚C, 30 dk)',
+      'Isıl işlem uygulamalarında kullanımı uygundur'
+    ],
+    thickness: '12, 19, 23, 36',
+    note: 'PKR, kapalı bir depoda ve ısıktan uzak bir sekilde depolanmalıdır. Sevk tarihinden itibaren 6 ayı askın süreyle bekleyen ürünlerde sorumluluk kabul etmemektedir.'
+  },
+  {
+    code: 'KRXE',
+    image: 'krxe.png',
+    description: 'KRXE ön tarafı kimyasal koronalı, arka tarafı elektrik koronalı çift yönde gerdirilmiş polyester (BOPET) ambalaj filmidir.',
+    features: [
+      'Tek tarafı koronalı',
+      'Tek tarafı kimyasal koronalı',
+      'Mükemmel parlaklık ve şeffaflık',
+      'Mükemmel tokluk',
+      'Mükemmel boyutsal kararlılık',
+      'Mükemmel makine performansı',
+      'Genel esnek ambalaj uygulamalarına yönelik baskı, kaplama ve laminasyon proseseslerinde kullanıma uygundur'
+    ],
+    thickness: '12, 23, 36, 50',
+    note: 'KRXE, kapalı bir depoda ve ısıktan uzak bir sekilde depolanmalıdır. Sevk tarihinden itibaren 6 ayı askın süreyle bekleyen ürünlerde sorumluluk kabul etmemektedir.'
+  },
+  {
+    code: 'KUXE',
+    image: 'kuxe.png',
+    description: 'KUXE ön tarafı kimyasal koronalı, arka tarafı elektrik koronalı çift yönde gerdirilmiş polyester (BOPET) ambalaj filmidir.',
+    features: [
+      'Tek tarafı elektrik koronalı',
+      'Kimyasal koronalı yüzey metalize edilebilir',
+      'Mükemmel makine performansı',
+      'Mükemmel parlaklık ve şeffaflık',
+      'Mükemmel tokluk',
+      'Mükemmel boyutsal kararlılık',
+      'Genel esnek ambalaj uygulamalarına yönelik baskı, kaplama ve laminasyon prosesesinde kullanıma uygundur'
+    ],
+    thickness: '12, 23, 36',
+    note: 'KUXE, kapalı bir depoda ve ısıktan uzak bir sekilde depolanmalıdır. Sevk tarihinden itibaren 6 ayı askın süreyle bekleyen ürünlerde sorumluluk kabul etmemektedir.'
+  },
+  {
+    code: 'PKUO',
+    image: 'pkuo.png',
+    description: 'PKUO, tek tarafı kimyasal koronalı isotropik çift yönde gerdirilmiş polyester(BOPET) ambalaj filmidir.',
+    features: [
+      'Tek tarafı kimyasal koronalı',
+      'Mükemmel makine performansı',
+      'Mükemmel parlaklık ve şeffaflık',
+      'Mükemmel tokluk',
+      'Mükemmel boyutsal kararlılık',
+      'Farklı mürekkep ve kaplama malzemelerinde üstün adezyon performansı',
+      'Üst folyo uygulamları için tasarlanmıştır'
+    ],
+    thickness: '12, 23, 36',
+    note: 'PKUO, kapalı bir depoda ve ısıktan uzak bir sekilde depolanmalıdır. Sevk tarihinden itibaren 6 ayı askın süreyle bekleyen ürünlerde sorumluluk kabul etmemektedir.'
+  },
+  {
+    code: 'PRS',
+    image: 'prs.png',
+    description: 'Inline silikon kaplı taşıyıcı BOPET film',
+    features: [
+      'Tek tarafı inline silikon kaplı',
+      'Mükemmel makine performansı',
+      'Mükemmel rub off performansı',
+      'Mükemmel kürlenmiş, silinmeyen, çok ince silikonlu yüzey'
+    ],
+    thickness: '12, 23, 36',
+    note: 'PRS, kapalı bir depoda ve ısıktan uzak bir sekilde depolanmalıdır. Polinas, sevk tarihinden itibaren 6 ayı askın süreyle bekleyen ürünlerde sorumluluk kabul etmemektedir. Akrilik bazlı tutkallar ile kullanılması tavsiye edilir.'
+  },
+  {
+    code: 'PKRD',
+    image: 'pkrd.png',
+    description: 'PKRD ön tarafı kimyasal koronalı, arka tarafı mat çift yönde gerdirilmiş polyester (BOPET) ambalaj filmidir.',
+    features: [
+      'Tek tarafı kimyasal koronalı',
+      'Tek tarafı mat',
+      'Mükemmel makine performansı',
+      'Mükemmel mat görünümlü yüzey',
+      'Mükemmel tokluk',
+      'Mükemmel boyutsal kararlılık',
+      'Genel esnek ambalaj uygulamalarına yönelik baskı, kaplama ve laminasyon prosesesinde kullanıma uygundur',
+      'PKRD retort uygulamalarda kullanılabilir (lab test 120˚C, 30 dk)'
+    ],
+    thickness: '12',
+    note: 'PKRD, kapalı bir depoda ve ısıktan uzak bir sekilde depolanmalıdır. Polinas, sevk tarihinden itibaren 6 ayı askın süreyle bekleyen ürünlerde sorumluluk kabul etmemektedir.'
+  }
+];
+---
+
+<Layout title="POLIPET - Polyester Film" activePage="urunler">
+  <div class="page-hero">
+    <Image src="/images/products/polipet.webp" alt="POLIPET" class="hero-image" width={200} height={200} />
+    <div class="hero-content">
+      <h1>POLIPET</h1>
+      <p>Polyester Film</p>
+    </div>
+  </div>
+  
+  <section class="section">
+    <div class="section-inner">
+      <div class="product-intro">
+        <p>Yüksek mukavemet, esneklik ve kimyasal direnç gibi özelliklere sahiptir. Elektrik yalıtımı, ambalaj, grafik baskı, endüstriyel uygulamalar ve daha birçok alanda kullanılan çok yönlü bir malzemedir.</p>
+      </div>
+
+      <div class="variants-list">
+        {variants.map(variant => (
+          <div class="variant-card">
+            <div class="variant-header">
+              <h2>{variant.code}</h2>
+              {variant.image && <Image src={`/images/products/${variant.image.replace('.png', '.webp')}`} alt={variant.code} class="variant-image" width={150} height={150} />}
+            </div>
+            <p class="variant-description">{variant.description}</p>
+            <h3>Özellikleri ve Kullanım alanları:</h3>
+            <ul>
+              {variant.features.map(feature => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+            <p class="thickness"><strong>Üretilen Kalınlıklar (mikron):</strong> {variant.thickness}</p>
+            {variant.note && <p class="note"><strong>Not:</strong> {variant.note}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0e4a8a 0%, #1a5fa8 50%, #2a7fd4 100%);
+    padding: 60px 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://static.wixstatic.com/media/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg/v1/fill/w_980,h_425,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg') center/cover no-repeat;
+    opacity: 0.15;
+  }
+  .hero-image {
+    position: relative;
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-content {
+    position: relative;
+    text-align: left;
+  }
+  .hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero-content p {
+    color: rgba(255,255,255,0.9);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .product-intro {
+    background: var(--gray-bg);
+    padding: 32px;
+    border-radius: 10px;
+    margin-bottom: 48px;
+  }
+  .product-intro p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .variants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .variant-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+  }
+  .variant-card h2 {
+    color: var(--blue-dark);
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .variant-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+  .variant-image {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+  .variant-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+  .variant-card h3 {
+    color: var(--blue-dark);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .variant-card ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+  .variant-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .thickness {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .note {
+    color: var(--text-color);
+    font-size: 13px;
+    font-style: italic;
+    background: var(--gray-bg);
+    padding: 12px;
+    border-radius: 6px;
+  }
+  @media (max-width: 768px) {
+    .page-hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-content {
+      text-align: center;
+    }
+    .hero-image {
+      width: 150px;
+    }
+    .hero-content h1 {
+      font-size: 32px;
+    }
+  }
+</style>

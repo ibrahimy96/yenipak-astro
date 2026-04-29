@@ -1,0 +1,12 @@
+# Product page redirects - 301 permanent redirects from old URLs to new structure
+/polimet /urunler/polimet 301
+/pilen /urunler/pilen 301
+/polibarr /urunler/polibarr 301
+/policast /urunler/policast 301
+/polikap /urunler/polikap 301
+/polilabel /urunler/polilabel 301
+/polimagic /urunler/polimagic 301
+/polinex /urunler/polinex 301
+/poliper /urunler/poliper 301
+/polipet /urunler/polipet 301
+/polistrip /urunler/polistrip 301

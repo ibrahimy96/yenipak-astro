@@ -1,0 +1,320 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+export const prerender = true;
+
+const variants = [
+  {
+    code: '203',
+    image: '203.png',
+    description: 'Şeffaf, ısıl yapışmasız, pilen BOPP film',
+    features: [
+      'Isıl yapışmasız',
+      'Koronasız',
+      'Mükemmel boyutsal kararlılık',
+      'Mükemmel hot stamping özelliği',
+      'Çizilmeye dayanıklı',
+      'Mükemmel parlaklık ve şeffaflık',
+      'Tel kaynak ile yapıştıran makinelerde mükemmel performans'
+    ],
+    thickness: '30'
+  },
+  {
+    code: '213E',
+    image: '213e.png',
+    description: 'Şeffaf, ısıl yapışmasız, BOPP laminasyon filmi.',
+    features: [
+      'Tek tarafı koronalı',
+      'Mükemmel şeffaflık ve parlaklık',
+      'Mükemmel boyutsal kararlılık',
+      'Mükemmel makine performansı',
+      'Geliştirilmiş mürekkep adezyonu',
+      'Tutkal ve ekstrüzyon laminasyonu prosesleri için geliştirilmiş yüzey',
+      'Soğuk tutkal uygulamalarında laminasyon filmi olarak kullanılabilir'
+    ],
+    thickness: '15, 20, 25, 30, 35, 40'
+  },
+  {
+    code: '213MF',
+    image: '213mf.png',
+    description: 'Şeffaf, ısıl yapışmasız BOPP bant filmi',
+    features: [
+      'Tek tarafı koronalı',
+      'MD yönünde düşük uzama özelliği',
+      'Koronalı yüzey, su bazlı akrilik tutkallar ve hot melt için uygundur',
+      'Laminasyon uygulamalarına uygundur'
+    ],
+    thickness: '23, 25, 28'
+  },
+  {
+    code: '223E',
+    image: '223e.png',
+    description: 'Düşük pusluluk ve değişmeyen sürtünme değerleri olan ısıl yapışmasız, şeffaf BOPP laminasyon filmi.',
+    features: [
+      'İki tarafı koronalı',
+      'Tek tarafı yüksek adezyonlu yüzey',
+      'Mükemmel şeffaflık, düşük pusluluk',
+      'Mükemmel boyutsal kararlılık',
+      'Mükemmel makine performansı',
+      'Bobin beslemeli şişe etiketleri laminasyonu için uygun',
+      'Sabit C.O.F değeri'
+    ],
+    thickness: '14, 17.5, 20, 25, 28, 30'
+  },
+  {
+    code: '223HL5',
+    image: '223hl5.png',
+    description: 'Şeffaf, ısıl yapışmasız, BOPP baskı ve laminasyon filmi.',
+    features: [
+      'İki tarafı koronalı',
+      'Mükemmel şeffaflık ve parlaklık',
+      'Mükemmel makine performansı',
+      'Su bazlı mürekkepler ve UV laminasyon tutkalları için geliştirilmiş adezyon özellikleri',
+      'Mükemmel film-film, film-kağıt, ve filmkarton laminasyon performansı'
+    ],
+    thickness: '12, 15, 19, 25, 30, 50'
+  },
+  {
+    code: '225MD',
+    image: '225md.png',
+    description: 'Laminasyon ve baskı uygulamaları için tek tarafı mat BOPP film.',
+    features: [
+      'İki tarafı koronalı',
+      'Bir tarafı mat, diğer tarafı parlak',
+      'Mükemmel adezyon özellikleri',
+      'Mat yüzeye lak atılabilir',
+      'Mükemmel boyutsal dayanaklılık',
+      'Mükemmel makine performansı',
+      'Termal laminasyon uygulamasında kullanılabilir baz film',
+      '15 µ film broşürler, kataloglar ve kitap kapakları için ışığın yansımasını engelleyen mat görünüm sağlar',
+      '20 µ kağıt & karton laminasyonu için uygun değildir'
+    ],
+    thickness: '15, 20'
+  },
+  {
+    code: '215DR2',
+    image: '215dr2.png',
+    description: 'Soğuk tutkal uygulamaları için geliştirilmiş, tek tarafı koronalı, mat BOPP film',
+    features: [
+      'Tek tarafı (parlak yüzey) koronalı',
+      'Mükemmel mat görünümlü yüzey',
+      'Soğuk tutkal uygulamaları için düşük release kuvveti',
+      'Isıl yapışmalı laminasyon uygulamaları için ısıya dayanıklı mat yüzey',
+      'Flexo ve rotogravür baskılar da mükemmel mürekkep adezyonu'
+    ],
+    thickness: '20'
+  },
+  {
+    code: '223MB',
+    image: '223mb.png',
+    description: 'Bant ve soğuk tutkal uygulamaları için beyaz, ısıl yapışmasız BOPP film.',
+    features: [
+      'İki tarafı koronalı',
+      'Tok yapıda mükemmel parlaklık',
+      'Yüksek gerilme direnci ve makine yönünde düşük uzama',
+      'Hot melt, cold seal ve su bazlı akrilik tutkal için uygundur',
+      'Beyaz rengi sayesinde mürekkep kullanımını azaltan ekonomik film'
+    ],
+    thickness: '20, 30, 35'
+  },
+  {
+    code: '213M',
+    image: '213m.png',
+    description: 'Şeffaf, ısıl yapışmasız BOPP bant filmi.',
+    features: [
+      'Tek tarafı koronalı',
+      'Tok yapıda mükemmel şeffaflık, parlaklık ve düşük pusluluk',
+      'Yüksek gerdirme ile sağlanan MD yönünde düşük uzama makine performansını arttırır',
+      'Koronalı yüzey, su bazlı akrilik tutkallar ve hot melt için uygundur'
+    ],
+    thickness: '23, 28, 32'
+  },
+  {
+    code: '213MB',
+    image: '213mb.png',
+    description: 'Beyaz renkli, ısıl yapışmasız BOPP bant filmi.',
+    features: [
+      'Tek tarafı koronalı',
+      'Tok yapıda mükemmel parlaklık',
+      'Yüksek gerdirme ile sağlanan, MD yönünde düşük uzama; makine performansını arttırır',
+      'Koronalı yüzey su bazlı akrilik tutkallar ve hot melt için uygundur',
+      'Beyaz mürekkep kullanımını azaltan ekonomik film'
+    ],
+    thickness: '28'
+  },
+  {
+    code: '223MB2',
+    image: '223mb2.png',
+    description: 'Soğuk tutkal uygulamaları için beyaz, ısıl yapışmasız BOPP film',
+    features: [
+      'İki tarafı koronalı',
+      'İdeal beyazlık ve parlaklık',
+      'MD yönünde düşük uzama özelliği',
+      'Beyaz mürekkep kullanımını azaltan, ekonomik film',
+      'Hot melt, cold seal, su bazlı tutkal ve akrilik bazlı tutkal için uygun koronalı yüzeyler'
+    ],
+    thickness: '20'
+  }
+];
+---
+
+<Layout title="Pilen - Yalın Filmler" activePage="urunler">
+  <div class="page-hero">
+    <Image src="/images/products/pilen.webp" alt="Pilen" class="hero-image" width={200} height={200} />
+    <div class="hero-content">
+      <h1>Pilen</h1>
+      <p>Pilen Filmler</p>
+    </div>
+  </div>
+  
+  <section class="section">
+    <div class="section-inner">
+      <div class="product-intro">
+        <Image src="/images/products/pilen-header-1.webp" alt="Pilen" class="hero-image" width={200} height={200} />
+        <Image src="/images/products/pilen-header-2.webp" alt="Pilen" class="hero-image-secondary" width={120} height={120} />
+        <p>Film-film, film-kağıt, film-karton laminasyonu uygulamaları için ısıl yapışmasız, şeffaf, mat veya beyaz, tek veya çift tarafı koronalı filmlerdir.</p>
+      </div>
+
+      <div class="variants-list">
+        {variants.map(variant => (
+          <div class="variant-card">
+            <div class="variant-header">
+              <h2>{variant.code}</h2>
+              {variant.image && <Image src={`/images/products/${variant.image.replace('.png', '.webp')}`} alt={variant.code} class="variant-image" width={150} height={150} />}
+            </div>
+            <p class="variant-description">{variant.description}</p>
+            <h3>Özellikleri ve Kullanım alanları:</h3>
+            <ul>
+              {variant.features.map(feature => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+            <p class="thickness"><strong>Üretilen Kalınlıklar (mikron):</strong> {variant.thickness}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0e4a8a 0%, #1a5fa8 50%, #2a7fd4 100%);
+    padding: 60px 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://static.wixstatic.com/media/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg/v1/fill/w_980,h_425,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg') center/cover no-repeat;
+    opacity: 0.15;
+  }
+  .hero-image {
+    position: relative;
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-content {
+    position: relative;
+    text-align: left;
+  }
+  .hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero-content p {
+    color: rgba(255,255,255,0.9);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .product-intro {
+    background: var(--gray-bg);
+    padding: 32px;
+    border-radius: 10px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .product-intro p {
+    font-size: 16px;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .variants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .variant-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+  }
+  .variant-card h2 {
+    color: var(--blue-dark);
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .variant-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+  .variant-image {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+  .variant-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+  .variant-card h3 {
+    color: var(--blue-dark);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .variant-card ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+  .variant-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .thickness {
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    .page-hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-content {
+      text-align: center;
+    }
+    .hero-image {
+      width: 150px;
+    }
+    .hero-content h1 {
+      font-size: 32px;
+    }
+  }
+</style>

@@ -1,0 +1,205 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+export const prerender = true;
+
+const variants = [
+  {
+    code: 'Pape Filmler',
+    image: 'pape.png',
+    description: 'Poliamid içeren, tek tarafı ısıl yapışmalı, şeffaf bariyer film.',
+    features: [
+      'Tek tarafı koronalı',
+      'Mükemmel parlaklık ve düşük pusluluk',
+      'Hot tack özelliği',
+      'Vakum paketleme ve ısıl şekillendirmeye uygun',
+      'Taze peynir ve işlenmiş et gibi yüksek oksijen bariyeri gerektiren ürünler için ideal'
+    ],
+    thickness: 'İhtiyaca göre değişik kalınlıklarda üretilmektedir'
+  },
+  {
+    code: 'PE/EVOH/PE Filmler',
+    image: 'peevohepe.png',
+    description: 'Şeffaf, tek tarafı ısıl yapışmalı, EVOH içeren süper bariyer film.',
+    features: [
+      'Tek tarafı koronalı',
+      'Süper oksijen (gaz) bariyeri',
+      'Mükemmel aroma bariyeri',
+      'Mükemmel parlaklık ve düşük pusluluk',
+      'Mükemmel hot tack ve ısıl yapışma kuvveti',
+      'Tek kat veya laminasyon halinde kullanıma uygun',
+      'Vakum paketleme ve modifiye atmosfer uygulamaları için uygun',
+      'Taze peynir, işlenmiş et , tavuk gibi yüksek oksijen bariyeri gerektiren ürünler için ideal',
+      'Unlu mamuller, kuru gıdalar ve taze makarna türü gıdaların paketlenmesi için uygun'
+    ],
+    thickness: 'İhtiyaca göre değişik kalınlıklarda üretilmektedir'
+  }
+];
+---
+
+<Layout title="POLIBARR - Bariyer Filmler" activePage="urunler">
+  <div class="page-hero">
+    <Image src="/images/products/polibarr.webp" alt="POLIBARR" class="hero-image" width={168} height={168} />
+    <div class="hero-content">
+      <h1>POLIBARR</h1>
+      <p>Bariyer Filmler</p>
+    </div>
+  </div>
+  
+  <section class="section">
+    <div class="section-inner">
+      <div class="product-intro">
+        <Image src="/images/products/polibarr-header-1.webp" alt="POLIBARR" class="hero-image" width={168} height={168} />
+        <Image src="/images/products/polibarr-header-2.webp" alt="POLIBARR" class="hero-image-secondary" width={168} height={168} />
+        <p>Yüksek nem ve oksijen bariyerine sahip PA (termoform işlemlerine uygun) veya EVOH içeren filmler.</p>
+      </div>
+
+      <div class="variants-list">
+        {variants.map(variant => (
+          <div class="variant-card">
+            <div class="variant-header">
+              <h2>{variant.code}</h2>
+              {variant.image && <Image src={`/images/products/${variant.image.replace('.png', '.webp')}`} alt={variant.code} class="variant-image" width={150} height={150} />}
+            </div>
+            <p class="variant-description">{variant.description}</p>
+            <h3>Özellikleri ve Kullanım alanları:</h3>
+            <ul>
+              {variant.features.map(feature => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+            <p class="thickness"><strong>Üretilen Kalınlıklar (mikron):</strong> {variant.thickness}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0e4a8a 0%, #1a5fa8 50%, #2a7fd4 100%);
+    padding: 60px 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://static.wixstatic.com/media/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg/v1/fill/w_980,h_425,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg') center/cover no-repeat;
+    opacity: 0.15;
+  }
+  .hero-image {
+    position: relative;
+    width: 168px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-image-secondary {
+    position: relative;
+    width: 168px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-content {
+    position: relative;
+    text-align: left;
+  }
+  .hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero-content p {
+    color: rgba(255,255,255,0.9);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .product-intro {
+    background: var(--gray-bg);
+    padding: 32px;
+    border-radius: 10px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .product-intro p {
+    font-size: 16px;
+    line-height: 1.6;
+    flex: 1;
+  }
+  .variants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .variant-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+  }
+  .variant-card h2 {
+    color: var(--blue-dark);
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .variant-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+  .variant-image {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+  .variant-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+  .variant-card h3 {
+    color: var(--blue-dark);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .variant-card ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+  .variant-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .thickness {
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    .page-hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-content {
+      text-align: center;
+    }
+    .hero-image {
+      width: 150px;
+    }
+    .hero-content h1 {
+      font-size: 32px;
+    }
+  }
+</style>

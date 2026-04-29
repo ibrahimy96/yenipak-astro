@@ -1,0 +1,362 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+export const prerender = true;
+
+const variants = [
+  {
+    code: '213A',
+    image: '213a.png',
+    description: 'Bobin beslemeli etiketleme makineleri için şeffaf BOPP film',
+    features: [
+      'Tek tarafı koronalı',
+      'Tutkallı kullanıma uygun',
+      'Mükemmel düz durma özelliği',
+      'Geliştirilmiş slip ve antistatik özellikler',
+      'Mükemmel düz durma özelliği',
+      'Mükemmel boyutsal kararlılık ve kesilebilme özelliği',
+      'Gravure, flexo ve bobin beslemeli ofset makinelerinde basılabilir'
+    ],
+    thickness: '35, 40'
+  },
+  {
+    code: '413B/423B',
+    image: '413b.png',
+    description: 'Pearlize, yüksek verimli, tek kat yapılarda kullanılan bobin beslemeli şişe etiket filmi.',
+    features: [
+      'Isıl yapışmasız',
+      'Tek tarafı koronalı 413B / İki tarafı koronalı 423B',
+      'Tek kat yapıda bobin beslemeli şişe etiketleri için ideal film',
+      'Baskı için beyazlatılmış yüzey',
+      'Diğer tarafta promosyon baskıları için geliştirilmiş adezyon özelliği',
+      'Mükemmel düz durma özelliği',
+      'Mükemmel boyutsal kararlılık "Hot Melt" den kaynaklanan kıvrılmaları önler',
+      'Bobin beslemeli makinelerde ve die cut proseslerinde kesim için mükemmel fiziksel özellikler',
+      'UV katkılar içermediğinden LUT Luminessence sensörleri ile kullanılabilir',
+      'POLILABEL 413B – tek tarafı koronalı versiyonu da mevcuttur'
+    ],
+    thickness: '38, 45'
+  },
+  {
+    code: '7525L',
+    image: '7525l.png',
+    description: 'Bobin beslemeli şişe etiketleme için metalize BOPP film.',
+    features: [
+      'Bir tarafı metalize, diğer tarafı koronalı',
+      'Tok yapıda mükemmel parlaklık',
+      'Mükemmel metal adezyonu',
+      'Mükemmel kesim performansı',
+      'Tek kat veya laminasyon yapıda bobin beslemeli şişe etiketlemeye uygun'
+    ],
+    thickness: '35, 40',
+    note: 'Metal kaplanan yüzeydeki korona kısa süre sonra değişebileceğinden primer lak kullanılması tavsiye edilir.'
+  },
+  {
+    code: '525TS',
+    image: '525ts.png',
+    description: 'Kendinden yapışkanlı etiketler için şeffaf, düşük puslulukta BOPP üst film.',
+    features: [
+      'İki tarafı koronalı',
+      'Tek kat ve laminasyonlu yapılarda kullanıma uygun',
+      'Mükemmel boyutsal kararlılık ve kesilebilme özelliği',
+      'Hot melt, cold seal, su bazlı tutkal ve akrilik bazlı tutkal için uygun koronalı yüzeyler'
+    ],
+    thickness: '40, 50'
+  },
+  {
+    code: '7525TS',
+    image: '7525ts.png',
+    description: 'Kendinden yapışkanlı etiketler için metalize üst film.',
+    features: [
+      'Bir tarafı metalize, diğer tarafı koronalı',
+      'Her iki yüzeyde mükemmel parlaklık',
+      'Filmin geliştirilmiş optik özellikleri sayesinde metalize olmayan film yüzeyinden mükemmel metal görüntüsü',
+      'Mükemmel metal adezyonu',
+      'Mükemmel kesim performansı',
+      'Tek kat veya laminasyon halinde kullanıma uygun',
+      'Bobin beslemeli şişe etiketleme uygulamalarında da kullanılabilir'
+    ],
+    thickness: '40, 50',
+    note: 'Metalize BOPP filmlerin yüzey gerilim değerleri iklim şartlarından aşırı oranda etkilenmektedir. Baskı için uygun primer lak kullanımı, laminasyon için inline korona uygulaması tavsiye edilmektedir.'
+  },
+  {
+    code: '423PS',
+    image: '423ps.png',
+    description: 'Kendinden yapışkanlı etiketler için pearlize BOPP üst film.',
+    features: [
+      'İki tarafı koronalı',
+      'Kendinden yapışkanlı etiket uygulamaları için ideal üst film',
+      'Bir tarafı beyaz diğer tarafı pearlize',
+      'Tok yapıda mükemmel opaklık ve parlaklık',
+      'Mükemmel kalıp kesim performansı',
+      'Yüksek adezyonu olan yüzey kat sayesinde, mükemmel mürekkep tutunması',
+      'Mükemmel boyutsal kararlılık "Hot Melt" den kaynaklanan kırışıklıkları önler',
+      'Doğal beyaz-pearlize görünümü sayesinde beyaz mürekkep kullanımından tasarruf sağlar',
+      'Tek kat veya laminasyon halinde kullanılabilir'
+    ],
+    thickness: '55, 60, 65'
+  },
+  {
+    code: '423PSD',
+    image: '423psd.png',
+    description: 'Kendinden yapışkanlı etiketler için pearlize mat görünümlü BOPP üst film',
+    features: [
+      'İki tarafı koronalı',
+      'Mükemmel kalıp kesim performansı',
+      'Opak görünümü sayesinde beyaz mürekkep kullanımını azaltan ekonomik film',
+      'Kendinden yapışkanlı etiket uygulamaları için ideal üst film',
+      'Yüksek adezyonu olan yüzey kat sayesinde, mükemmel mürekkep tutunması',
+      'Mükemmel boyutsal kararlılık ve kesilebilme özelliği',
+      'Mükemmel opaklık ve tokluk',
+      'Tek kat ve laminasyonlu yapılarda kullanıma uygun'
+    ],
+    thickness: '60'
+  },
+  {
+    code: 'A055',
+    image: 'a055.png',
+    description: 'Tek tarafı kaplı, kendinden yapışkanlı etiketler için şeffaf face stock film',
+    features: [
+      'No label look görünümü',
+      'Flekso, gravür, UV-flekso, UV letterpress, rotary screen makinalarında su, solvent ve UV bazlı mürekkeplerle mükemmel performansı',
+      'Mükemmel tokluğu sayesinde kendinden yapışkanlı etiket makinelerinde mükemmel performans',
+      'Mükemmel boyutsal kararlılık ve kesilebilme özelliği'
+    ],
+    thickness: '51'
+  },
+  {
+    code: 'A049',
+    image: 'a049.png',
+    description: 'Kendinden yapışkanlı etiketler için, tek tarafı kaplı pearlize BOPP film',
+    features: [
+      'Mükemmel boyutsal kararlılık ve kesilebilme özelliği',
+      'Mükemmel opaklık, parlaklık ve düşük ışık geçirgenliği',
+      'Flekso, gravür, UV-flekso, UV letterpress, rotary screen makinalarında su, solvent ve UV bazlı mürekkeplerle mükemmel performansı',
+      'Mükemmel tokluğu sayesinde kendinden yapışkanlı etiket makinelerinde mükemmel performans'
+    ],
+    thickness: '56, 61, 66'
+  },
+  {
+    code: 'A078',
+    image: 'a078.png',
+    description: 'Kendinden yapışkanlı etiketler için metal yüzeyi kaplı pearlize/metalize BOPP üst film',
+    features: [
+      'Mükemmel parlaklık',
+      'Mükemmel boyutsal kararlılık ve kesilebilme özelliği',
+      'Flekso, gravür, UV-flekso, UV letterpress, rotary screen makinalarında su, solvent ve UV bazlı mürekkeplerle mükemmel performansı',
+      'Mükemmel tokluğu sayesinde kendinden yapışkanlı etiket makinelerinde mükemmel performans'
+    ],
+    thickness: '51'
+  },
+  {
+    code: '0A78',
+    image: '0a78.png',
+    description: 'Kendinden yapışkanlı etiketler için arka yüzeyi kaplı BOPP metalize üst film',
+    features: [
+      'Mükemmel parlaklık',
+      'Mükemmel kalıp kesim performansı',
+      'Flekso, gravür, UV-flekso, UV letterpress, rotary screen makinalarında su, solvent ve UV bazlı mürekkeplerle mükemmel performansı',
+      'Filmin tokluğu sayesinde kendinden yapışkanlı etiketlemede mükemmel performans'
+    ],
+    thickness: '51'
+  }
+];
+---
+
+<Layout title="POLILABEL - Etiket Filmleri" activePage="urunler">
+  <div class="page-hero">
+    <Image src="/images/products/polilabel.webp" alt="POLILABEL" class="hero-image" width={133} height={133} />
+    <div class="hero-content">
+      <h1>POLILABEL</h1>
+      <p>Etiket Filmleri</p>
+    </div>
+  </div>
+  
+  <section class="section">
+    <div class="section-inner">
+      <div class="product-intro">
+        <Image src="/images/products/polilabel-header-1.webp" alt="POLILABEL" class="hero-image" width={133} height={133} />
+        <Image src="/images/products/polilabel-header-2.webp" alt="POLILABEL" class="hero-image-secondary" width={168} height={168} />
+        <Image src="/images/products/polilabel-header-3.webp" alt="POLILABEL" class="hero-image-tertiary" width={168} height={168} />
+        <p>Çeşitli etiketleme uygulamalarına yönelik etiket filmleri:</p>
+        <ul>
+          <li>Bobin veya magazin beslemeli etiket uygulamaları</li>
+          <li>Kendinden yapışkanlı etiket uygulamaları</li>
+          <li>Kes & demetle uygulamaları</li>
+          <li>Kalıp içi etiketleme uygulamaları</li>
+        </ul>
+      </div>
+
+      <div class="variants-list">
+        {variants.map(variant => (
+          <div class="variant-card">
+            <div class="variant-header">
+              <h2>{variant.code}</h2>
+              {variant.image && <Image src={`/images/products/${variant.image.replace('.png', '.webp')}`} alt={variant.code} class="variant-image" width={150} height={150} />}
+            </div>
+            <p class="variant-description">{variant.description}</p>
+            <h3>Özellikleri ve Kullanım alanları:</h3>
+            <ul>
+              {variant.features.map(feature => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+            <p class="thickness"><strong>Üretilen Kalınlıklar (mikron):</strong> {variant.thickness}</p>
+            {variant.note && <p class="note"><strong>Not:</strong> {variant.note}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0e4a8a 0%, #1a5fa8 50%, #2a7fd4 100%);
+    padding: 60px 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://static.wixstatic.com/media/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg/v1/fill/w_980,h_425,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg') center/cover no-repeat;
+    opacity: 0.15;
+  }
+  .hero-image {
+    position: relative;
+    width: 133px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-image-secondary {
+    position: relative;
+    width: 168px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-image-tertiary {
+    position: relative;
+    width: 168px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-content {
+    position: relative;
+    text-align: left;
+  }
+  .hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero-content p {
+    color: rgba(255,255,255,0.9);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .product-intro {
+    background: var(--gray-bg);
+    padding: 32px;
+    border-radius: 10px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .product-intro p {
+    font-size: 16px;
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: 16px;
+  }
+  .product-intro ul {
+    margin-left: 20px;
+  }
+  .product-intro li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .variants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .variant-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+  }
+  .variant-card h2 {
+    color: var(--blue-dark);
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .variant-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+  .variant-image {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+  .variant-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+  .variant-card h3 {
+    color: var(--blue-dark);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .variant-card ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+  .variant-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .thickness {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .note {
+    color: var(--text-color);
+    font-size: 13px;
+    font-style: italic;
+    background: var(--gray-bg);
+    padding: 12px;
+    border-radius: 6px;
+  }
+  @media (max-width: 768px) {
+    .page-hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-content {
+      text-align: center;
+    }
+    .hero-image {
+      width: 150px;
+    }
+    .hero-content h1 {
+      font-size: 32px;
+    }
+  }
+</style>
