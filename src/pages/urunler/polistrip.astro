@@ -1,60 +1,102 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
 
 export const prerender = true;
 ---
 
 <Layout title="POLISTRIP - Açma Şeritleri" activePage="urunler">
   <div class="page-hero">
-    <Image src="/images/products/polistrip.webp" alt="POLISTRIP" class="hero-image" width={200} height={200} />
+    <Image
+      src="/images/products/polistrip-header.png"
+      alt="POLISTRIP"
+      class="hero-image"
+      width={120}
+      height={149}
+    />
     <div class="hero-content">
       <h1>POLISTRIP</h1>
       <p>Açma Şeritleri</p>
     </div>
   </div>
-  
+
   <section class="section">
     <div class="section-inner">
       <div class="product-intro">
         <ul>
-          <li>Geliştirilmiş, MOPP film (tek yöne gerdirilmiş polipropilen film)</li>
-          <li>Değişik, renk, desen, uzunluk ve genişlikte üretilebilmektedir</li>
-          <li>Sigara, çiklet, bisküvi, kaset ve CD paketlerinin kolay açılabilmesi için en pratik çözüm</li>
-          <li>Ürünlerinizin taklit riskini ortadan kaldırmak için logonuzun basılı olduğu açma şeridini kullanabilirsiniz</li>
+          <li>
+            Geliştirilmiş, MOPP film (tek yöne gerdirilmiş polipropilen film)
+          </li>
+          <li>
+            Değişik, renk, desen, uzunluk ve genişlikte üretilebilmektedir
+          </li>
+          <li>
+            Sigara, çiklet, bisküvi, kaset ve CD paketlerinin kolay açılabilmesi
+            için en pratik çözüm
+          </li>
+          <li>
+            Ürünlerinizin taklit riskini ortadan kaldırmak için logonuzun basılı
+            olduğu açma şeridini kullanabilirsiniz
+          </li>
           <li>Yüksek hızlı paketleme makinelerinde mükemmel performans</li>
-          <li>Geliştirilmiş tutkalı sayesinde, kağıt ve film gibi değişik ambalaj malzemeleri ile problemsiz çalışabilmektedir</li>
+          <li>
+            Geliştirilmiş tutkalı sayesinde, kağıt ve film gibi değişik ambalaj
+            malzemeleri ile problemsiz çalışabilmektedir
+          </li>
         </ul>
+        <Image
+          src="/images/products/polistrip-strip.png"
+          alt="POLISTRIP standart renkler ve özel tasarımlar"
+          class="strip-image"
+          width={166}
+          height={541}
+        />
       </div>
 
       <div class="variants-list">
         <div class="variant-card">
           <h2>Polistrip</h2>
-          <p class="variant-description">Kendinden yapışkanlı Açma Şeritleri.</p>
+          <p class="variant-description">
+            Kendinden yapışkanlı Açma Şeritleri.
+          </p>
           <h3>Özellikleri ve Kullanım alanları:</h3>
           <ul>
             <li>Geliştirilmiş, MOPP (Tek yönde gerdirilmiş) film</li>
-            <li>Sigara, ciklet, bisküvi, kaset ve CD paketlerinin kolay açılabilmesi için en pratik çözüm</li>
+            <li>
+              Sigara, ciklet, bisküvi, kaset ve CD paketlerinin kolay
+              açılabilmesi için en pratik çözüm
+            </li>
             <li>Yüksek hızlı paketleme makinelerinde mükemmel performans</li>
-            <li>Geliştirilmiş tutkalı sayesinde kağıt ve film gibi değişik ambalaj malzemeleri ile problemsiz çalışabilmektedir</li>
-            <li>Ürünlerin taklit edilme riskini kaldıran logolu baskı özelliği</li>
+            <li>
+              Geliştirilmiş tutkalı sayesinde kağıt ve film gibi değişik ambalaj
+              malzemeleri ile problemsiz çalışabilmektedir
+            </li>
+            <li>
+              Ürünlerin taklit edilme riskini kaldıran logolu baskı özelliği
+            </li>
           </ul>
-          
+
           <h3>Üretilen renkler:</h3>
-          <p>Şeffaf, Kırmızı, Altın Sarısı ve Gümüş Rengi (isteğe bağlı değişik renkler)</p>
-          
+          <p>
+            Şeffaf, Kırmızı, Altın Sarısı ve Gümüş Rengi (isteğe bağlı değişik
+            renkler)
+          </p>
+
           <h3>Üretilen desenler:</h3>
-          <p>Tamamı renkli, düz çizgili, noktalı, logolu (isteğe bağlı renk ve dizaynda)</p>
-          
+          <p>
+            Tamamı renkli, düz çizgili, noktalı, logolu (isteğe bağlı renk ve
+            dizaynda)
+          </p>
+
           <h3>Üretilen uzunluklar:</h3>
           <ul>
             <li>Sürekli Üretimler 6.000 m, 10.000 m</li>
             <li>Jumbo Bobinler 50.000 m, 75.000 m, 100.000 m, 150.000 m</li>
           </ul>
-          
+
           <h3>Üretilen iç çap ölçüleri:</h3>
           <p>29 mm (standart) – 152 mm (jumbo)</p>
-          
+
           <h3>Ürün Kodları:</h3>
           <ul>
             <li>SYO: Şeffaf</li>
@@ -80,15 +122,15 @@ export const prerender = true;
     gap: 40px;
   }
   .page-hero::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: url('/images/hero-bg.jpg') center/cover no-repeat;
+    background: url("/images/hero-bg.jpg") center/cover no-repeat;
     opacity: 0.15;
   }
   .hero-image {
     position: relative;
-    width: 200px;
+    width: 120px;
     height: auto;
     object-fit: contain;
   }
@@ -97,15 +139,15 @@ export const prerender = true;
     text-align: left;
   }
   .hero-content h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 42px;
     font-weight: 800;
     color: var(--white);
     margin-bottom: 8px;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   }
   .hero-content p {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 18px;
     line-height: 1.4;
   }
@@ -114,9 +156,18 @@ export const prerender = true;
     padding: 32px;
     border-radius: 10px;
     margin-bottom: 48px;
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
   }
   .product-intro ul {
+    flex: 1;
     margin-left: 20px;
+  }
+  .strip-image {
+    width: 166px;
+    height: auto;
+    object-fit: contain;
   }
   .product-intro li {
     margin-bottom: 8px;
@@ -131,7 +182,7 @@ export const prerender = true;
     background: var(--white);
     border-radius: 10px;
     padding: 32px;
-    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.07);
   }
   .variant-card h2 {
     color: var(--blue-dark);
@@ -171,7 +222,13 @@ export const prerender = true;
       text-align: center;
     }
     .hero-image {
-      width: 150px;
+      width: 120px;
+    }
+    .product-intro {
+      flex-direction: column;
+    }
+    .strip-image {
+      align-self: center;
     }
     .hero-content h1 {
       font-size: 32px;

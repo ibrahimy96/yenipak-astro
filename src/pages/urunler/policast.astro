@@ -1,90 +1,128 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
 
 export const prerender = true;
 
 const variants = [
   {
-    code: 'C11',
-    image: 'c11.png',
-    description: 'Gıda ambalajları için iki tarafı ısıl yapışmalı, şeffaf, gerdirilmemiş polipropilen film.',
+    code: "C11",
+    image: "c11.png",
+    description:
+      "Gıda ambalajları için iki tarafı ısıl yapışmalı, şeffaf, gerdirilmemiş polipropilen film.",
     features: [
-      'Tek tarafı koronalı',
-      'Tok yapıda mükemmel parlaklık, şeffaflık ve düşük pusluluk',
-      'Mükemmel laminasyon tutkalı adezyonu',
-      'Mükemmel hot tack ve ısıl yapışma kuvveti',
-      'Tek kat veya laminasyon halinde kullanıma uygun',
-      'Mükemmel makine performansı',
-      'Unlu mamuller, bakliyat ve makarna ambalajları için ideal'
+      "Tek tarafı koronalı",
+      "Tok yapıda mükemmel parlaklık, şeffaflık ve düşük pusluluk",
+      "Mükemmel laminasyon tutkalı adezyonu",
+      "Mükemmel hot tack ve ısıl yapışma kuvveti",
+      "Tek kat veya laminasyon halinde kullanıma uygun",
+      "Mükemmel makine performansı",
+      "Unlu mamuller, bakliyat ve makarna ambalajları için ideal",
     ],
-    thickness: '20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 100'
+    thickness: "20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 100",
   },
   {
-    code: 'C12F',
-    image: 'c12f.png',
-    description: 'İki tarafı ısıl yapışmalı, taze sebze ve salata paketleri için şeffaf cast antifog film.',
+    code: "C12F",
+    image: "c12f.png",
+    description:
+      "İki tarafı ısıl yapışmalı, taze sebze ve salata paketleri için şeffaf cast antifog film.",
     features: [
-      'İki tarafıda koronalı',
-      'Tok yapıda mükemmel parlaklık',
-      'Mükemmel hot tack ve ısıl yapışma kuvveti',
-      'Mükemmel makine performansı',
-      'Paket içerisindeki nem filmin yüzeyinde yayılarak büyük damlalar oluşmasını engeller ve paketin içinin görülmesini sağlar'
+      "İki tarafıda koronalı",
+      "Tok yapıda mükemmel parlaklık",
+      "Mükemmel hot tack ve ısıl yapışma kuvveti",
+      "Mükemmel makine performansı",
+      "Paket içerisindeki nem filmin yüzeyinde yayılarak büyük damlalar oluşmasını engeller ve paketin içinin görülmesini sağlar",
     ],
-    thickness: '40, 50, 65'
+    thickness: "40, 50, 65",
   },
   {
-    code: 'C11B',
-    image: 'c11b.png',
-    description: 'Gıda ambalajları için iki tarafı ısıl yapışmalı, beyaz, CPP (gerdirilmemiş polipropilen) film.',
+    code: "C11B",
+    image: "c11b.png",
+    description:
+      "Gıda ambalajları için iki tarafı ısıl yapışmalı, beyaz, CPP (gerdirilmemiş polipropilen) film.",
     features: [
-      'Tek tarafı koronalı',
-      'Tok yapıda mükemmel parlaklık',
-      'Mükemmel laminasyon tutkalı adezyonu',
-      'Mükemmel hot tack ve ısıl yapışma kuvveti',
-      'Tek kat veya laminasyon halinde kullanıma uygun',
-      'Mükemmel makine performansı',
-      'Unlu mamuller, bakliyat ve makarna ambalajları için ideal'
+      "Tek tarafı koronalı",
+      "Tok yapıda mükemmel parlaklık",
+      "Mükemmel laminasyon tutkalı adezyonu",
+      "Mükemmel hot tack ve ısıl yapışma kuvveti",
+      "Tek kat veya laminasyon halinde kullanıma uygun",
+      "Mükemmel makine performansı",
+      "Unlu mamuller, bakliyat ve makarna ambalajları için ideal",
     ],
-    thickness: '20-100 µm arası'
-  }
+    thickness: "20-100 µm arası",
+  },
 ];
 ---
 
 <Layout title="POLICAST - CPP Filmler" activePage="urunler">
   <div class="page-hero">
-    <Image src="/images/products/policast.webp" alt="POLICAST" class="hero-image" width={280} height={280} />
+    <Image
+      src="/images/products/policast.webp"
+      alt="POLICAST"
+      class="hero-image"
+      width={280}
+      height={280}
+    />
     <div class="hero-content">
       <h1>POLICAST</h1>
       <p>CPP Filmler</p>
     </div>
   </div>
-  
+
   <section class="section">
     <div class="section-inner">
       <div class="product-intro">
-        <Image src="/images/products/policast-header-1.webp" alt="POLICAST" class="hero-image" width={280} height={280} />
-        <Image src="/images/products/policast-header-2.webp" alt="POLICAST" class="hero-image-secondary" width={262} height={262} />
-        <p>Gıda ambalajları ve genel kullanım amaçlı ısıl yapışmalı şeffaf, beyaz, ve antifog özellikli cast filmler. Kağıt benzeri baskıya uygun baskı yüzeyi mat veya parlak cast filmler.</p>
+        <Image
+          src="/images/products/policast-header-1.jpg"
+          alt="POLICAST"
+          class="hero-image"
+          width={280}
+          height={280}
+        />
+        <Image
+          src="/images/products/policast-header-2.jpg"
+          alt="POLICAST"
+          class="hero-image-secondary"
+          width={262}
+          height={262}
+        />
+        <p>
+          Gıda ambalajları ve genel kullanım amaçlı ısıl yapışmalı şeffaf,
+          beyaz, ve antifog özellikli cast filmler. Kağıt benzeri baskıya uygun
+          baskı yüzeyi mat veya parlak cast filmler.
+        </p>
       </div>
 
       <div class="variants-list">
-        {variants.map(variant => (
-          <div class="variant-card">
-            <div class="variant-header">
-              <h2>{variant.code}</h2>
-              {variant.image && <Image src={`/images/products/${variant.image.replace('.png', '.webp')}`} alt={variant.code} class="variant-image" width={150} height={150} />}
+        {
+          variants.map((variant) => (
+            <div class="variant-card">
+              <div class="variant-header">
+                <h2>{variant.code}</h2>
+                {variant.image && (
+                  <Image
+                    src={`/images/products/${variant.image.replace(".png", ".webp")}`}
+                    alt={variant.code}
+                    class="variant-image"
+                    width={150}
+                    height={150}
+                  />
+                )}
+              </div>
+              <p class="variant-description">{variant.description}</p>
+              <h3>Özellikleri ve Kullanım alanları:</h3>
+              <ul>
+                {variant.features.map((feature) => (
+                  <li>{feature}</li>
+                ))}
+              </ul>
+              <p class="thickness">
+                <strong>Üretilen Kalınlıklar (mikron):</strong>{" "}
+                {variant.thickness}
+              </p>
             </div>
-            <p class="variant-description">{variant.description}</p>
-            <h3>Özellikleri ve Kullanım alanları:</h3>
-            <ul>
-              {variant.features.map(feature => (
-                <li>{feature}</li>
-              ))}
-            </ul>
-            <p class="thickness"><strong>Üretilen Kalınlıklar (mikron):</strong> {variant.thickness}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -101,10 +139,10 @@ const variants = [
     gap: 40px;
   }
   .page-hero::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: url('/images/hero-bg.jpg') center/cover no-repeat;
+    background: url("/images/hero-bg.jpg") center/cover no-repeat;
     opacity: 0.15;
   }
   .hero-image {
@@ -124,15 +162,15 @@ const variants = [
     text-align: left;
   }
   .hero-content h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 42px;
     font-weight: 800;
     color: var(--white);
     margin-bottom: 8px;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   }
   .hero-content p {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 18px;
     line-height: 1.4;
   }
@@ -159,7 +197,7 @@ const variants = [
     background: var(--white);
     border-radius: 10px;
     padding: 32px;
-    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.07);
   }
   .variant-card h2 {
     color: var(--blue-dark);

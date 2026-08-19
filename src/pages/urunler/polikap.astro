@@ -1,119 +1,160 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { Image } from 'astro:assets';
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
 
 export const prerender = true;
 
 const variants = [
   {
-    code: 'X026',
-    image: 'x026.png',
-    description: 'Yatay paketleme makineleri için tek tarafı PVdC kaplı şeffaf BOPP film.',
+    code: "X026",
+    image: "x026.png",
+    description:
+      "Yatay paketleme makineleri için tek tarafı PVdC kaplı şeffaf BOPP film.",
     features: [
-      'Kaplama yapılmamış yüzeye baskı yapılabilir',
-      'Mükemmel nem, oksijen ve aroma bariyeri',
-      'Mükemmel parlaklık ve şeffaflık',
-      'PVdC kaplı tarafta Hot tack özelliği ve mükemmel ısıl yapışma',
-      'Bisküvi, kraker ve kekler için ideal paketleme filmi'
+      "Kaplama yapılmamış yüzeye baskı yapılabilir",
+      "Mükemmel nem, oksijen ve aroma bariyeri",
+      "Mükemmel parlaklık ve şeffaflık",
+      "PVdC kaplı tarafta Hot tack özelliği ve mükemmel ısıl yapışma",
+      "Bisküvi, kraker ve kekler için ideal paketleme filmi",
     ],
-    thickness: '31, 38'
+    thickness: "31, 38",
   },
   {
-    code: 'B050',
-    image: 'b050.png',
-    description: 'Klorin içermeyen, baskıya uygun, ısıl yapışmalı, yüksek bariyerli şeffaf BOPP baskı ve laminasyon filmi',
+    code: "B050",
+    image: "b050.png",
+    description:
+      "Klorin içermeyen, baskıya uygun, ısıl yapışmalı, yüksek bariyerli şeffaf BOPP baskı ve laminasyon filmi",
     features: [
-      'Bariyer özellik gerektiren genel paketleme uygulamaları için ideal (patates cipsleri, kahve, kraker ve gofret ambalajları gibi)',
-      'Mükemmel tokluk',
-      'Yüksek oksijen ve nem bariyeri'
+      "Bariyer özellik gerektiren genel paketleme uygulamaları için ideal (patates cipsleri, kahve, kraker ve gofret ambalajları gibi)",
+      "Mükemmel tokluk",
+      "Yüksek oksijen ve nem bariyeri",
     ],
-    thickness: '16, 21'
+    thickness: "16, 21",
   },
   {
-    code: 'B051',
-    image: 'b051.png',
-    description: 'Klorin içermeyen, baskıya uygun, yüksek bariyerli şeffaf BOPP baskı ve laminasyon filmi',
+    code: "B051",
+    image: "b051.png",
+    description:
+      "Klorin içermeyen, baskıya uygun, yüksek bariyerli şeffaf BOPP baskı ve laminasyon filmi",
     features: [
-      'Bariyer özellik gerektiren genel paketleme uygulamaları için ideal (patates cipsleri, kahve, kraker ve gofret ambalajları gibi)',
-      'Mükemmel tokluk',
-      'Yüksek oksijen ve nem bariyeri',
-      'Koronalı yüzey soğuk tutkal uygulamalarına uygun'
+      "Bariyer özellik gerektiren genel paketleme uygulamaları için ideal (patates cipsleri, kahve, kraker ve gofret ambalajları gibi)",
+      "Mükemmel tokluk",
+      "Yüksek oksijen ve nem bariyeri",
+      "Koronalı yüzey soğuk tutkal uygulamalarına uygun",
     ],
-    thickness: '16, 21'
+    thickness: "16, 21",
   },
   {
-    code: 'B030',
-    image: 'b030.png',
-    description: 'Klorin içermeyen ,baskı ya uygun, yüksek bariyerli şeffaf BOPET baskı ve laminasyon filmi',
+    code: "B030",
+    image: "b030.png",
+    description:
+      "Klorin içermeyen ,baskı ya uygun, yüksek bariyerli şeffaf BOPET baskı ve laminasyon filmi",
     features: [
-      'Bariyer özellik gerektiren genel paketleme uygulamalarına yönelik baskı, laminasyon proseslerinde kullanıma uygundur',
-      'Mükemmel tokluk',
-      'Yüksek oksijen bariyeri',
-      'İyi adhezyon ve korona seviyesi için tavsiye edilen raf ömrü süresi 1 yıldır'
+      "Bariyer özellik gerektiren genel paketleme uygulamalarına yönelik baskı, laminasyon proseslerinde kullanıma uygundur",
+      "Mükemmel tokluk",
+      "Yüksek oksijen bariyeri",
+      "İyi adhezyon ve korona seviyesi için tavsiye edilen raf ömrü süresi 1 yıldır",
     ],
-    thickness: '13'
+    thickness: "13",
   },
   {
-    code: 'CC26',
-    image: 'cc26.png',
-    description: 'Yatay ve dikey paketleme makineleri için, iki yüzeyi akrilik kaplı şeffaf BOPP film',
+    code: "CC26",
+    image: "cc26.png",
+    description:
+      "Yatay ve dikey paketleme makineleri için, iki yüzeyi akrilik kaplı şeffaf BOPP film",
     features: [
-      'Mükemmel nem, oksijen ve aroma bariyeri',
-      'Mükemmel parlaklık ve şeffaflık',
-      'Sadece tek kat yapılarda kullanıma uygundur',
-      'Flexo ve rotogravür baskılar da mükemmel mürekkep adezyonu'
+      "Mükemmel nem, oksijen ve aroma bariyeri",
+      "Mükemmel parlaklık ve şeffaflık",
+      "Sadece tek kat yapılarda kullanıma uygundur",
+      "Flexo ve rotogravür baskılar da mükemmel mürekkep adezyonu",
     ],
-    thickness: '30'
+    thickness: "30",
   },
   {
-    code: 'PSA',
-    image: 'psa.png',
-    description: 'PSA, bir tarafı PVdC kaplı çift yönde gerdirilmiş polyester(BOPET) ambalaj filmidir.',
+    code: "PSA",
+    image: "psa.png",
+    description:
+      "PSA, bir tarafı PVdC kaplı çift yönde gerdirilmiş polyester(BOPET) ambalaj filmidir.",
     features: [
-      'Laminasyon ve PVdC ye uygun mürekkepler ile baskı için dizayn edilmiştir',
-      'PVdC kaplı taraf ısıl yapışmalıdır',
-      'Mükemmel nem, oksijen ve aroma bariyeri',
-      'Laminasyon sonrası pastorizasyonda mükemmel ısı ve nem direnci (PVdC taraf lamine edilmelidir)'
+      "Laminasyon ve PVdC ye uygun mürekkepler ile baskı için dizayn edilmiştir",
+      "PVdC kaplı taraf ısıl yapışmalıdır",
+      "Mükemmel nem, oksijen ve aroma bariyeri",
+      "Laminasyon sonrası pastorizasyonda mükemmel ısı ve nem direnci (PVdC taraf lamine edilmelidir)",
     ],
-    thickness: '12, 14'
-  }
+    thickness: "12, 14",
+  },
 ];
 ---
 
 <Layout title="POLIKAP - Kaplı Filmler" activePage="urunler">
   <div class="page-hero">
-    <Image src="/images/products/polikap.webp" alt="POLIKAP" class="hero-image" width={168} height={168} />
+    <Image
+      src="/images/products/polikap.webp"
+      alt="POLIKAP"
+      class="page-hero-image"
+      width={168}
+      height={168}
+    />
     <div class="hero-content">
       <h1>POLIKAP</h1>
       <p>Kaplı Filmler</p>
     </div>
   </div>
-  
+
   <section class="section">
     <div class="section-inner">
       <div class="product-intro">
-        <Image src="/images/products/polikap-header-1.webp" alt="POLIKAP" class="hero-image" width={168} height={168} />
-        <Image src="/images/products/polikap-header-2.webp" alt="POLIKAP" class="hero-image-secondary" width={200} height={200} />
-        <p>Gıda ambalajları için yüksek bariyerli, ısıl yapışmalı veya soğuk tutkal uygulamalarına uygun metalize koeks veya yüksek verimli kavite edilmiş filmler.</p>
+        <Image
+          src="/images/products/polikap-header-1.webp"
+          alt="POLIKAP"
+          class="product-intro-image"
+          width={168}
+          height={168}
+        />
+        <Image
+          src="/images/products/polikap-header-2.webp"
+          alt="POLIKAP"
+          class="product-intro-image-secondary"
+          width={200}
+          height={200}
+        />
+        <p>
+          Gıda ambalajları için yüksek bariyerli, ısıl yapışmalı veya soğuk
+          tutkal uygulamalarına uygun metalize koeks veya yüksek verimli kavite
+          edilmiş filmler.
+        </p>
       </div>
 
       <div class="variants-list">
-        {variants.map(variant => (
-          <div class="variant-card">
-            <div class="variant-header">
-              <h2>{variant.code}</h2>
-              {variant.image && <Image src={`/images/products/${variant.image.replace('.png', '.webp')}`} alt={variant.code} class="variant-image" width={150} height={150} />}
+        {
+          variants.map((variant) => (
+            <div class="variant-card">
+              <div class="variant-header">
+                <h2>{variant.code}</h2>
+                {variant.image && (
+                  <Image
+                    src={`/images/products/${variant.image.replace(".png", ".webp")}`}
+                    alt={variant.code}
+                    class="variant-image"
+                    width={150}
+                    height={150}
+                  />
+                )}
+              </div>
+              <p class="variant-description">{variant.description}</p>
+              <h3>Özellikleri ve Kullanım alanları:</h3>
+              <ul>
+                {variant.features.map((feature) => (
+                  <li>{feature}</li>
+                ))}
+              </ul>
+              <p class="thickness">
+                <strong>Üretilen Kalınlıklar (mikron):</strong>{" "}
+                {variant.thickness}
+              </p>
             </div>
-            <p class="variant-description">{variant.description}</p>
-            <h3>Özellikleri ve Kullanım alanları:</h3>
-            <ul>
-              {variant.features.map(feature => (
-                <li>{feature}</li>
-              ))}
-            </ul>
-            <p class="thickness"><strong>Üretilen Kalınlıklar (mikron):</strong> {variant.thickness}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -130,44 +171,42 @@ const variants = [
     gap: 40px;
   }
   .page-hero::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: url('/images/hero-bg.jpg') center/cover no-repeat;
+    background: url("/images/hero-bg.jpg") center/cover no-repeat;
     opacity: 0.15;
   }
-  .hero-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 168px;
+  .page-hero-image,
+  .product-intro-image,
+  .product-intro-image-secondary {
+    position: relative;
     height: auto;
     object-fit: contain;
   }
-  .hero-image-secondary {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .page-hero-image {
+    width: 168px;
+  }
+  .product-intro-image {
+    width: 168px;
+  }
+  .product-intro-image-secondary {
     width: 200px;
-    height: auto;
-    object-fit: contain;
   }
   .hero-content {
     position: relative;
     text-align: left;
   }
   .hero-content h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 42px;
     font-weight: 800;
     color: var(--white);
     margin-bottom: 8px;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   }
   .hero-content p {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 18px;
     line-height: 1.4;
   }
@@ -194,7 +233,7 @@ const variants = [
     background: var(--white);
     border-radius: 10px;
     padding: 32px;
-    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.07);
   }
   .variant-card h2 {
     color: var(--blue-dark);
@@ -243,7 +282,7 @@ const variants = [
     .hero-content {
       text-align: center;
     }
-    .hero-image {
+    .page-hero-image {
       width: 150px;
     }
     .hero-content h1 {
