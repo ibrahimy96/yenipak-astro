@@ -10,3 +10,28 @@
 /poliper /urunler/poliper 301
 /polipet /urunler/polipet 301
 /polistrip /urunler/polistrip 301
+
+# Old Wix product/category pages (Turkish URLs percent-encoded, as browsers send them)
+/shrink /urunler/shrink 301
+/%C3%BCstfilmler /urunler/ust-filmler 301
+/poli-m /urunler 301
+/kopyas%C4%B1-poli-m /urunler 301
+/kopyas%C4%B1-yeni-1 /urunler 301
+/bopp-filmler /urunler 301
+/uygulama-alanlar%C4%B1 /urunler 301
+/%C3%BCr%C3%BCn-gruplar%C4%B1 /urunler 301
+
+# Old Wix kurumsal pages
+/genel-bak%C4%B1%C5%9F /kurumsal 301
+/firma-tan%C4%B1t%C4%B1m%C4%B1 /kurumsal 301
+
+# Old Wix service pages
+/dilme /hizmetler 301
+/perfore /hizmetler 301
+/korona-atma /hizmetler 301
+/tabakalama /hizmetler 301
+
+# Old Wix sales/legal pages
+/sipari%C5%9F-formu /siparis-formu 301
+/%C3%B6neri-%C5%9Fikayet-formu /oneri-sikayet-formu 301
+/kullan%C4%B1m-ko%C5%9Fullar%C4%B1 /kullanim-kosullari 301

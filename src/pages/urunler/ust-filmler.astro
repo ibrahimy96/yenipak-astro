@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+export const prerender = true;
+---
+
+<Layout title="ÜST FİLMLER - Sabit ve Kolay Açılabilen Filmler" activePage="urunler">
+  <div class="page-hero">
+    <Image src="/images/products/ust-filmler.webp" alt="ÜST FİLMLER" class="hero-image" width={200} height={200} />
+    <div class="hero-content">
+      <h1>ÜST FİLMLER</h1>
+      <p>Sabit ve Kolay Açılabilen Filmler</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="product-intro">
+        <p>Gıda ile temasa uygun ısıl yapışmalı PET (polyester) filmler.</p>
+      </div>
+
+      <div class="variants-list">
+        <div class="variant-card">
+          <h2>SABİT YAPIŞAN FİLMLER</h2>
+          <h3>UFSPP</h3>
+          <p><strong>Filmin tanımı:</strong> PP (Polipropilen) içeren, tek tarafı ısıl yapışmalı, şeffaf bariyer film.</p>
+          <h3>Özellikleri ve Kullanım alanları:</h3>
+          <ul>
+            <li>Tek tarafı koronalı</li>
+            <li>Mükemmel parlaklık ve düşük pusluluk</li>
+            <li>Hot tack özelliği</li>
+            <li>Üst folyo uygulamaları için uygundur</li>
+          </ul>
+        </div>
+
+        <div class="variant-card">
+          <h2>KOLAY AÇILAN (PEELABLE) FİLMLER</h2>
+          <h3>PHAC</h3>
+          <p>Çift taraflı gerdirilmiş polietilen tereftalat (BOPET) film, amorf polietilen tereftalat ısıl yapışma tabakası ile birlikte özel olarak tasarlanmıştır. Özellikle tabak ve kase üstlerinin kapatılması için uygundur.</p>
+          <p>Buzdolabında saklanan ve dondurulmuş gıda tabaklarının üst kapama filmi olarak tasarlanmıştır.</p>
+          <p>PHAC üst kapama filmi, PET, CPET, PETG ve PVC gibi alt tabak ve kaselere kolay ayrılabilecek şekilde yapışabilir.</p>
+          <p>PHAC üst kapama filmi, güçlü yapışma özellikleri gerektiğinde önerilmektedir (dolum sürecinde toz, yağ veya sıvılar gibi maddelerin yapışma alanını kirletebileceği durumlarda önerilir).</p>
+          <p>PHAC üst kapama filminin başlıca kullanım alanları; yağ içeren gıdalar, sıvılar, toz dolum, pastörize edilen gıda ambalajları, sıcak dolum projeleri ve MAP (modifiye atmosfer) uygulamalarında güvenilir bir çözüm sunar.</p>
+          <p>Birçok faktör üretim sürecini etkileyebilir. Kullanılan farklı ekipmanlar ve teknikler de dahil olmak üzere, PHAC filmin herhangi bir uygulamada kullanılmadan önce denenmesi gerekmektedir.</p>
+          <p class="thickness"><strong>Üretilen Kalınlıklar (mikron):</strong> 12, 19, 23, 30, 36</p>
+
+          <h3>PHAM-TE</h3>
+          <p>Metal tarafı HSL kaplı; diğer tarafı akrilik kaplı metalize BOPET film, esnek ambalajlar için kullanılır.</p>
+          <ul>
+            <li>Mükemmel makine performansı</li>
+            <li>Mükemmel boyutsal kararlılığa sahiptir</li>
+            <li>Tabak veya kaselerin üstünü kapatmak (üst film) için tasarlanmıştır</li>
+            <li>PP, PS ve PET tabak veya kaselerde kolay açılabilir, güçlü bir sızdırmazlık sağlar</li>
+            <li>Flekso, gravür ve ofset baskı sistemlerinde UV bazlı mürekkeplerle mükemmel baskı yapılabilir</li>
+          </ul>
+
+          <h3>PLAC</h3>
+          <p>Doldurma sırasında sızdırmazlık bölgesinin kirlenmesi olasılığı olmaksızın iyi bir sızdırmazlık sağladığından önerilir. Birçok faktör üretim sürecini etkileyebilir; PLAC filmin herhangi bir uygulamada kullanılmadan önce denenmesi gerekmektedir.</p>
+
+          <h3>PPH</h3>
+          <p>Birçok faktör üretim sürecini etkileyebilir. Kullanılan farklı ekipmanlar ve teknikler de dahil olmak üzere, PPH filmin herhangi bir uygulamada kullanılmadan önce denenmesi gerekmektedir.</p>
+
+          <h3>PPHA</h3>
+          <p>Birçok faktör üretim sürecini etkileyebilir. Kullanılan farklı ekipmanlar ve teknikler de dahil olmak üzere, PPHA filmin herhangi bir uygulamada kullanılmadan önce denenmesi gerekmektedir.</p>
+
+          <h3>PPHC</h3>
+          <p>Birçok faktör üretim sürecini etkileyebilir. Kullanılan farklı ekipmanlar ve teknikler de dahil olmak üzere, PPHC filmin herhangi bir uygulamada kullanılmadan önce denenmesi gerekmektedir.</p>
+
+          <h3>PPLA</h3>
+          <p>Birçok faktör üretim sürecini etkileyebilir. Kullanılan farklı ekipmanlar ve teknikler de dahil olmak üzere, PPLA filmin herhangi bir uygulamada kullanılmadan önce denenmesi gerekmektedir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0e4a8a 0%, #1a5fa8 50%, #2a7fd4 100%);
+    padding: 60px 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/images/hero-bg.jpg') center/cover no-repeat;
+    opacity: 0.15;
+  }
+  .hero-image {
+    position: relative;
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-content {
+    position: relative;
+    text-align: left;
+  }
+  .hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero-content p {
+    color: rgba(255,255,255,0.9);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .product-intro {
+    background: var(--gray-bg);
+    padding: 32px;
+    border-radius: 10px;
+    margin-bottom: 48px;
+  }
+  .product-intro p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .variants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .variant-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+  }
+  .variant-card h2 {
+    color: var(--blue-dark);
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .variant-card h3 {
+    color: var(--blue-dark);
+    font-size: 18px;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+  .variant-card ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+  .variant-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .variant-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .thickness {
+    color: var(--blue-dark);
+  }
+  @media (max-width: 768px) {
+    .page-hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-content {
+      text-align: center;
+    }
+    .hero-image {
+      width: 150px;
+    }
+    .hero-content h1 {
+      font-size: 32px;
+    }
+  }
+</style>

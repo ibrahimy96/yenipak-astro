@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Öneri & Şikayet Formu" activePage="satis">
+  <div class="page-hero"><h1>Öneri & Şikayet Formu</h1><p>Görüşleriniz bizim için değerli</p></div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="form-box">
+        <form id="feedback-form">
+          <div class="form-row">
+            <div class="form-field"><label>Ad-Soyad</label><input type="text" name="name" placeholder="Ad-Soyad" required></div>
+            <div class="form-field"><label>E-posta</label><input type="email" name="email" placeholder="email@sirket.com" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-field"><label>Şirket</label><input type="text" name="company" placeholder="Şirket"></div>
+            <div class="form-field"><label>Telefon</label><input type="tel" name="phone" placeholder="0 5xx xxx xx xx"></div>
+          </div>
+          <div class="form-field"><label>Mesajınız</label><textarea name="message" rows="6" placeholder="Öneri veya şikayetinizi buraya yazın..." required></textarea></div>
+          <button type="submit" class="btn-primary">Gönder</button>
+        </form>
+        <div class="success-msg" id="feedback-success">&#10003; Talebinizi aldık, en kısa sürede dönüş yapacağız.</div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .form-box { background: var(--gray-bg); border-radius: 12px; padding: 40px; max-width: 720px; margin: 0 auto; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .form-field label { font-size: 12px; font-weight: 600; font-family: 'Montserrat', sans-serif; color: var(--text); }
+  .form-field input, .form-field textarea { padding: 10px 14px; border: 1px solid var(--border); border-radius: 5px; font-family: 'Open Sans', sans-serif; font-size: 13.5px; outline: none; background: var(--white); transition: border .2s; resize: vertical; }
+  .form-field input:focus, .form-field textarea:focus { border-color: var(--blue); }
+  .success-msg { display: none; background: #d4edda; color: #155724; border-radius: 6px; padding: 12px 16px; font-size: 13px; margin-top: 12px; }
+  @media (max-width: 640px) {
+    .form-row { grid-template-columns: 1fr; }
+    .form-box { padding: 28px 20px; }
+  }
+</style>
+
+<script>
+  document.getElementById('feedback-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+    const body = encodeURIComponent(
+      'Ad-Soyad: ' + data.get('name') +
+      '\nE-posta: ' + data.get('email') +
+      '\nŞirket: ' + data.get('company') +
+      '\nTelefon: ' + data.get('phone') +
+      '\n\nMesaj:\n' + data.get('message')
+    );
+    window.location.href = 'mailto:satis@yenipak.com?subject=%C3%96neri%20%26%20%C5%9Eikayet%20Formu&body=' + body;
+    document.getElementById('feedback-success')!.style.display = 'block';
+  });
+</script>

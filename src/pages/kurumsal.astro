@@ -6,7 +6,28 @@ import Layout from '../layouts/Layout.astro';
   <div class="page-hero"><h1>Kurumsal / Firma Tanıtımı</h1><p>Yenipak Ambalaj hakkında detaylı bilgi</p></div>
   <section class="section">
     <div class="section-inner">
-      <h2 class="section-title">Hakkımızda</h2>
+      <h2 class="section-title">Genel Bakış</h2>
+      <div class="facts-grid">
+        <div class="fact"><span class="fact-label">Firma Adı</span><span class="fact-value">Yenipak Ambalaj Tic. ve San. A.Ş.</span></div>
+        <div class="fact"><span class="fact-label">Kuruluş Tarihi</span><span class="fact-value">08.09.1997</span></div>
+        <div class="fact"><span class="fact-label">Adres</span><span class="fact-value">Hadımköy Mahallesi, Atatürk Sanayi Bölgesi, Hamit Kaplan Sokak, No:12/1, 34555 Arnavutköy, İstanbul, Türkiye</span></div>
+      </div>
+      <div class="sold-products">
+        <h3>Satışı Yapılan Ürünler</h3>
+        <ul>
+          <li>BOPP (Çift Yönde Gerdirilmiş Polipropilen) Filmler</li>
+          <li>CPP Filmler</li>
+          <li>BOPET (Çift Yönde Gerdirilmiş Polyester) Filmler</li>
+          <li>Islak Mendil Filmleri</li>
+          <li>Vakum Poşetler</li>
+          <li>Metalize Filmler</li>
+          <li>Kaplı Filmler</li>
+          <li>Bariyerli termoform ve Üst Filmler</li>
+          <li>Açma şeritleri</li>
+          <li>Holografik Filmler</li>
+        </ul>
+      </div>
+      <h2 class="section-title" style="margin-top:56px">Hakkımızda</h2>
       <div class="prose">
         <p>Yenipak Ambalaj Tic. ve San. Ltd. Şti. <strong>8 Eylül 1997 tarihinde</strong>, Polinas A.Ş.'nin ana bayii olarak kurulmuştur. Başta gıda ambalajı olmak üzere çeşitli filmlerin alım satım işlemlerini ve istenen ölçülerde kesimlerini yapmaktadır.</p>
         <p>Kurulduğu günlerde üç kişilik kadrosu ile Beylikdüzü'nde faaliyete başlayan Yenipak Ambalaj, personel sayısını 10'a, makine sayısını 5'e çıkararak büyümüştür.</p>
@@ -29,6 +50,19 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+  .facts-grid { display: flex; flex-direction: column; gap: 0; max-width: 820px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .fact { display: grid; grid-template-columns: 200px 1fr; }
+  .fact:not(:last-child) { border-bottom: 1px solid var(--border); }
+  .fact-label { background: var(--gray-bg); padding: 14px 18px; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: var(--blue-dark); }
+  .fact-value { padding: 14px 18px; font-size: 14px; color: var(--text-light); line-height: 1.6; }
+  .sold-products { margin-top: 28px; }
+  .sold-products h3 { font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; color: var(--blue-dark); margin-bottom: 14px; }
+  .sold-products ul { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 32px; list-style: none; font-size: 14px; color: var(--text-light); max-width: 820px; }
+  .sold-products ul li::before { content: '• '; color: var(--blue); font-weight: bold; }
+  @media (max-width: 640px) {
+    .fact { grid-template-columns: 1fr; }
+    .sold-products ul { grid-template-columns: 1fr; }
+  }
   .prose { font-size: 15px; line-height: 1.9; color: var(--text-light); max-width: 820px; }
   .prose p { margin-bottom: 18px; }
   .prose strong { color: var(--blue-dark); font-weight: 700; }

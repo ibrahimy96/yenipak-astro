@@ -1,92 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const heroImages = [
-  "c837a6_e55e0461bef24a7d9663f1b8ba547959~mv2.jpg",
-  "c837a6_b3d24609767048afb0b8fa5ae2c89fa4~mv2.jpg",
-  "c837a6_a17f3647b57d4ab5975796b2abd4e6c4~mv2.jpg",
-  "c837a6_5c1bab9f5c0d42cbb4bee4e1dc4613b1~mv2.jpg",
-];
-
 const products = [
-  {
-    img: "ac31a9_ddf1c619e46f4ed08d700cc233fa1faa~mv2.png",
-    name: "POLICAST",
-    sub: "CPP Filmler",
-    slug: "policast",
-  },
-  {
-    img: "ac31a9_b80b19d2497240b9ab92f46b96af4b5d~mv2.png",
-    name: "POLIMET",
-    sub: "Metalize Filmler",
-    slug: "polimet",
-  },
-  {
-    img: "ac31a9_0450da851dd54556bbe217d30ea1cee0~mv2.png",
-    name: "POLIKAP",
-    sub: "Kaplı Filmler",
-    slug: "polikap",
-  },
-  {
-    img: "ac31a9_6984da691e4d4d0b9aa343a907ac75be~mv2.png",
-    name: "POLIBARR",
-    sub: "Bariyer Filmler",
-    slug: "polibarr",
-  },
-  {
-    img: "ac31a9_7bb85ac51d02453282c96c9a9f53f8ae~mv2.png",
-    name: "POLIMAGIC",
-    sub: "Holografik Filmler",
-    slug: "polimagic",
-  },
-  {
-    img: "ac31a9_c47ead84743942409d65e739237b2db1~mv2.png",
-    name: "POLISTRIP",
-    sub: "Açma Şeritleri",
-    slug: "polistrip",
-  },
-  {
-    img: "ac31a9_c4e1e7478fbb47bca04f30e2356e6b3d~mv2.png",
-    name: "POLINEX",
-    sub: "Koekstrude Filmler",
-    slug: "polinex",
-  },
-  {
-    img: "ac31a9_63eb2911d48b4a48b6d3dfd109e72f43~mv2.png",
-    name: "PILEN",
-    sub: "Yalın Filmler",
-    slug: "pilen",
-  },
-  {
-    img: "ac31a9_9906ed2101d0492d8a459ac8d4339b93~mv2.png",
-    name: "POLIPER",
-    sub: "Pearlize Filmler",
-    slug: "poliper",
-  },
-  {
-    img: "ac31a9_01a0bd9d28f4425d9b6f72bd6c28e063~mv2.png",
-    name: "POLILABEL",
-    sub: "Etiket Filmleri",
-    slug: "polilabel",
-  },
-  {
-    img: "ac31a9_e986b93d56024cf08f8c57605f5e2532~mv2.png",
-    name: "ÜST FİLMLER",
-    sub: "Sabit ve Kolay Açılabilen",
-    slug: null,
-  },
-  {
-    img: "ac31a9_b746a4ca67e0459ca19752acc1bf31a7~mv2.png",
-    name: "POLIPET",
-    sub: "Polyester Film",
-    slug: "polipet",
-  },
-  {
-    img: "ac31a9_01f38c7fdd444b4c86bd52fe587b704c~mv2.png",
-    name: "SHRINK FILMLER",
-    sub: "PVC - PET Shrink",
-    slug: null,
-  },
+  { name: "POLICAST", sub: "CPP Filmler", slug: "policast" },
+  { name: "POLIMET", sub: "Metalize Filmler", slug: "polimet" },
+  { name: "POLIKAP", sub: "Kaplı Filmler", slug: "polikap" },
+  { name: "POLIBARR", sub: "Bariyer Filmler", slug: "polibarr" },
+  { name: "POLIMAGIC", sub: "Holografik Filmler", slug: "polimagic" },
+  { name: "POLISTRIP", sub: "Açma Şeritleri", slug: "polistrip" },
+  { name: "POLINEX", sub: "Koekstrude Filmler", slug: "polinex" },
+  { name: "PILEN", sub: "Yalın Filmler", slug: "pilen" },
+  { name: "POLIPER", sub: "Pearlize Filmler", slug: "poliper" },
+  { name: "POLILABEL", sub: "Etiket Filmleri", slug: "polilabel" },
+  { name: "ÜST FİLMLER", sub: "Sabit ve Kolay Açılabilen", slug: "ust-filmler" },
+  { name: "POLIPET", sub: "Polyester Film", slug: "polipet" },
+  { name: "SHRINK FILMLER", sub: "PVC - PET Shrink", slug: "shrink" },
 ];
 ---
 
@@ -101,33 +29,16 @@ const products = [
       <h2 class="section-title">Ürün Grupları</h2>
       <div class="products-grid">
         {
-          products.map((p) =>
-            p.slug ? (
-              <a href={`/urunler/${p.slug}`} class="product-card">
-                <img
-                  src={`https://static.wixstatic.com/media/${p.img}/v1/fit/w_179,h_101,q_75,enc_avif,quality_auto/${p.img}`}
-                  alt={p.name}
-                />
-                <div class="product-card-label">
-                  {p.name}
-                  <br />
-                  <span class="product-sub">{p.sub}</span>
-                </div>
-              </a>
-            ) : (
-              <div class="product-card">
-                <img
-                  src={`https://static.wixstatic.com/media/${p.img}/v1/fit/w_179,h_101,q_75,enc_avif,quality_auto/${p.img}`}
-                  alt={p.name}
-                />
-                <div class="product-card-label">
-                  {p.name}
-                  <br />
-                  <span class="product-sub">{p.sub}</span>
-                </div>
+          products.map((p) => (
+            <a href={`/urunler/${p.slug}`} class="product-card">
+              <img src={`/images/products/${p.slug}.png`} alt={p.name} />
+              <div class="product-card-label">
+                {p.name}
+                <br />
+                <span class="product-sub">{p.sub}</span>
               </div>
-            ),
-          )
+            </a>
+          ))
         }
       </div>
     </div>
@@ -145,7 +56,7 @@ const products = [
     content: "";
     position: absolute;
     inset: 0;
-    background: url("https://static.wixstatic.com/media/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg/v1/fill/w_980,h_425,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d948a3_c9ba26606c5f46e68093f29b42c3db1c~mv2.jpg")
+    background: url("/images/hero-bg.jpg")
       center/cover no-repeat;
     opacity: 0.15;
   }

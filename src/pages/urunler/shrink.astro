@@ -1,0 +1,167 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+export const prerender = true;
+---
+
+<Layout title="SHRINK FİLMLER - PVC - PET Shrink" activePage="urunler">
+  <div class="page-hero">
+    <Image src="/images/products/shrink.webp" alt="SHRINK FİLMLER" class="hero-image" width={200} height={200} />
+    <div class="hero-content">
+      <h1>SHRINK FİLMLER</h1>
+      <p>PVC - PET Shrink Filmler</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="product-intro">
+        <p>Shrink film, ambalajlama veya paketleme amaçları için kullanılır. Ürünlerin taze kalmasını sağlar; kuruma, zarar görme ve istenmeyen kokulardan uzun süre korur.</p>
+      </div>
+
+      <div class="variants-list">
+        <div class="variant-card">
+          <h2>PVC SHRINK SLEEVE</h2>
+          <h3>Filmin tanımı:</h3>
+          <p>Gıda, kozmetik, elektronik ve oyuncak gibi sektörlerde paketleme ve ambalajlama süreçlerinde tercih edilmektedir. Isı uygulandığında daralarak sıkıca ürünleri kaplayan bir özelliğe sahiptir.</p>
+          <h3>Özellikleri ve Kullanım alanları:</h3>
+          <ul>
+            <li><strong>Mukavemet:</strong> Yüksek çekme mukavemetine sahiptir, yani darbelere ve yırtılmalara karşı dirençlidir.</li>
+            <li><strong>Şeffaflık:</strong> Genellikle şeffaftır, böylece ürünlerin görünürlüğünü artırır ve ürün tanıtımını kolaylaştırır.</li>
+            <li><strong>Büzülme Kapasitesi:</strong> Isı uygulandığında büzülerek ürünün etrafını sıkıca sarar ve korur.</li>
+            <li><strong>Koruma:</strong> Ürünleri toz, kir, nem ve istenmeyen kokulardan korur. Ayrıca, ambalajın sıkı bir şekilde kapanmasını sağlayarak ürünlerin taze kalmasına yardımcı olur.</li>
+            <li><strong>Esneklik:</strong> Hem küçük hem de büyük boyutlu ürünlerin ambalajlanması için uygundur. Farklı kalınlıklarda ve genişliklerde mevcuttur.</li>
+            <li><strong>Kimyasal Direnç:</strong> Birçok kimyasala karşı dirençlidir, bu da ürünlerin kimyasal maddelerden korunmasını sağlar.</li>
+            <li><strong>Çevre Dostu Seçenekler:</strong> Bazı shrink filmler geri dönüştürülebilir ve çevre dostu malzemelerden yapılmıştır.</li>
+            <li><strong>Uyumluluk:</strong> Manuel veya makine kullanımı için uygun olan çeşitli türleri bulunur.</li>
+          </ul>
+          <p>Bu özellikler, shrink filmin geniş bir uygulama yelpazesinde tercih edilmesini sağlar.</p>
+          <p class="thickness"><strong>Üretilen Kalınlıklar (mikron):</strong> 40, 45, 50</p>
+        </div>
+
+        <div class="variant-card">
+          <h2>PET SHRINK SLEEVE</h2>
+          <h3>Filmin tanımı:</h3>
+          <p>Isıyla büzüşen polyester filmdir. Mükemmel kayma özelliğine sahiptir. Düşük sıcaklıkta yüksek enine büzülme ve düşük makine yönünde büzülmeyi birleştirir.</p>
+          <h3>Özellikleri ve Kullanım alanları:</h3>
+          <ul>
+            <li>Bu ürün çevre dostudur, yani yandığında klor gazı açığa çıkmaz.</li>
+            <li>Mükemmel berraklığa, parlaklığa sahiptir ve ters baskıya uygundur. Bu ürün 360° grafiklerin etrafına sarılmaya izin verir.</li>
+            <li>Mükemmel yüksek çekme oranına sahiptir ve en zorlu, konturlu yüzeylere güzel bir şekilde uyum sağlar.</li>
+            <li>Depolama kolaylığı için daha iyi büzülme başlatma sıcaklığına sahiptir ve dönüştürmeden sonraki taşıma durumu mevcuttur.</li>
+            <li>Gıda ile teması uygundur.</li>
+            <li>PET ve cam için dış ambalaj gibi çeşitli shrink ambalaj: şişeler, kutular ve diğer türdeki kaplar için uygundur.</li>
+            <li>Daralan etiket ve kapatma uygulamalarında yaygın olarak kullanılmaktadır.</li>
+          </ul>
+          <p>Başlıca uygulamalar arasında içecek ambalajı, kozmetik ve kişisel bakım ambalajı, gıda ambalajı, meyve suyu ambalajı ve ilaç ambalajı gibi ürünlerde sıklıkla tercih edilir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0e4a8a 0%, #1a5fa8 50%, #2a7fd4 100%);
+    padding: 60px 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/images/hero-bg.jpg') center/cover no-repeat;
+    opacity: 0.15;
+  }
+  .hero-image {
+    position: relative;
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-content {
+    position: relative;
+    text-align: left;
+  }
+  .hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .hero-content p {
+    color: rgba(255,255,255,0.9);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  .product-intro {
+    background: var(--gray-bg);
+    padding: 32px;
+    border-radius: 10px;
+    margin-bottom: 48px;
+  }
+  .product-intro p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .variants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .variant-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.07);
+  }
+  .variant-card h2 {
+    color: var(--blue-dark);
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .variant-card h3 {
+    color: var(--blue-dark);
+    font-size: 18px;
+    margin-bottom: 12px;
+    margin-top: 20px;
+  }
+  .variant-card ul {
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
+  .variant-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+  .variant-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .thickness {
+    color: var(--blue-dark);
+  }
+  @media (max-width: 768px) {
+    .page-hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-content {
+      text-align: center;
+    }
+    .hero-image {
+      width: 150px;
+    }
+    .hero-content h1 {
+      font-size: 32px;
+    }
+  }
+</style>

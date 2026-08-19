@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sayfa Bulunamadı" activePage="">
+  <section class="notfound">
+    <div class="notfound-inner">
+      <h1>404</h1>
+      <p>Aradığınız sayfa bulunamadı veya taşınmış olabilir.</p>
+      <div class="notfound-links">
+        <a class="btn-primary" href="/">Anasayfaya Dön</a>
+        <a class="btn-secondary" href="/urunler">Ürün Grupları</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .notfound { padding: 120px 24px; text-align: center; }
+  .notfound h1 { font-family: 'Montserrat', sans-serif; font-size: 96px; font-weight: 800; color: var(--blue); margin-bottom: 16px; }
+  .notfound p { font-size: 16px; color: var(--text-light); margin-bottom: 32px; }
+  .notfound-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-secondary { display: inline-block; background: var(--white); color: var(--blue); border: 2px solid var(--blue); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 14px; padding: 11px 28px; border-radius: 5px; text-decoration: none; transition: background .2s, color .2s; }
+  .btn-secondary:hover { background: var(--blue); color: var(--white); }
+</style>

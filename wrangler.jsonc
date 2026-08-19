@@ -1,7 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "yenipak-astro",
-  "main": "dist/_worker.js/index.js",
   "compatibility_date": "2026-03-17",
   "compatibility_flags": [
     "global_fetch_strictly_public",
@@ -11,7 +10,6 @@
     "enabled": true
   },
   "assets": {
-    "binding": "ASSETS",
     "directory": "dist"
   }
 }

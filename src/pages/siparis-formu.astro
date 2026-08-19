@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sipariş Formu" activePage="satis">
+  <div class="page-hero"><h1>Sipariş Formu</h1><p>Sipariş detaylarınızı iletin, size dönüş yapalım</p></div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="form-box">
+        <form id="order-form">
+          <div class="form-row">
+            <div class="form-field"><label>Ad-Soyad</label><input type="text" name="name" placeholder="Ad-Soyad" required></div>
+            <div class="form-field"><label>E-posta</label><input type="email" name="email" placeholder="email@sirket.com" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-field"><label>Şirket</label><input type="text" name="company" placeholder="Şirket" required></div>
+            <div class="form-field"><label>Telefon</label><input type="tel" name="phone" placeholder="0 5xx xxx xx xx" required></div>
+          </div>
+          <div class="form-field"><label>Sipariş Detayları</label><textarea name="details" rows="6" placeholder="Ürün, ölçü, miktar ve diğer sipariş detayları..." required></textarea></div>
+          <button type="submit" class="btn-primary">Gönder</button>
+        </form>
+        <div class="success-msg" id="order-success">&#10003; Talebinizi aldık, en kısa sürede dönüş yapacağız.</div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .form-box { background: var(--gray-bg); border-radius: 12px; padding: 40px; max-width: 720px; margin: 0 auto; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .form-field label { font-size: 12px; font-weight: 600; font-family: 'Montserrat', sans-serif; color: var(--text); }
+  .form-field input, .form-field textarea { padding: 10px 14px; border: 1px solid var(--border); border-radius: 5px; font-family: 'Open Sans', sans-serif; font-size: 13.5px; outline: none; background: var(--white); transition: border .2s; resize: vertical; }
+  .form-field input:focus, .form-field textarea:focus { border-color: var(--blue); }
+  .success-msg { display: none; background: #d4edda; color: #155724; border-radius: 6px; padding: 12px 16px; font-size: 13px; margin-top: 12px; }
+  @media (max-width: 640px) {
+    .form-row { grid-template-columns: 1fr; }
+    .form-box { padding: 28px 20px; }
+  }
+</style>
+
+<script>
+  document.getElementById('order-form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+    const body = encodeURIComponent(
+      'Ad-Soyad: ' + data.get('name') +
+      '\nE-posta: ' + data.get('email') +
+      '\nŞirket: ' + data.get('company') +
+      '\nTelefon: ' + data.get('phone') +
+      '\n\nSipariş Detayları:\n' + data.get('details')
+    );
+    window.location.href = 'mailto:satis@yenipak.com?subject=Sipari%C5%9F%20Formu&body=' + body;
+    document.getElementById('order-success')!.style.display = 'block';
+  });
+</script>
